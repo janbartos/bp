@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
-import mpld3
 import streamlit.components.v1 as components
 from scipy import stats
 
