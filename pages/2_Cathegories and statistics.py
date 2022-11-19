@@ -61,6 +61,9 @@ country = st.selectbox(
     languages.keys())
 
 df_import = pd.read_csv("save2/df_data_groupby_" + languages.get(country) + ".csv")
+df_import = df_import.drop(['2021'], axis=1)
+df_transposed = df_import.set_index("Cathegory").T
+
 
 
 cathegory = st.selectbox(
@@ -69,3 +72,39 @@ cathegory = st.selectbox(
         df_import["Cathegory"].unique()
     #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
     )
+
+df_fertility = pd.read_csv("fr.csv")
+df_stats = pd.DataFrame()
+df_stats["Data"] = df_transposed[cathegory].values
+df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
+
+col1, col2, col3, col4, col5 = st.columns(5)
+pearson = stats.pearsonr(df_transposed[cathegory].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
+col1.metric("Pearson correlation", round(pearson[0], 4))
+col2.metric("p-Value", round(pearson[1], 5))
+col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
+spearman = stats.spearmanr(df_transposed[cathegory].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
+col4.metric("Spearman correlation", round(spearman[0], 4))
+col5.metric("p-Value", round(spearman[1], 5))
+
+time = np.arange(2004, 2021)
+ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
+key_data = df_transposed[cathegory].values
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+lns1 = ax.plot(time, ftr, '-', label='FTR in ' + country)
+ax2 = ax.twinx()
+lns2 = ax2.plot(time, key_data, '-r', label=cathegory)
+
+# added these three lines
+lns = lns1 + lns2
+labs = [l.get_label() for l in lns]
+ax.legend(lns, labs, loc=0)
+
+ax.grid()
+ax.set_xlabel("Years")
+ax.set_ylabel(r"Fertility")
+ax2.set_ylabel(r"Searched")
+st.pyplot(fig)
