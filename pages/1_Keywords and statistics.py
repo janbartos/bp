@@ -152,7 +152,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
 
-    abline_values = [slope * i + intercept for i in x]
+    abline_values = [slope * i + intercept for i in ftr]
 
 
     ax3.plot(ftr, abline_values, 'b')
