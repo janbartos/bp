@@ -108,27 +108,17 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
     col6, col7, col8, col9, col10 = st.columns(5)
-    slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)
 
-    col6.metric("Slope", round(slope, 4))
-    col7.metric("Intercept", round(intercept, 5))
-    col8.metric("R - value", round(r_value, 4))
+    #
 
-    col9.metric("p-Value", round(p_value, 4))
-    col10.metric("std_err", round(std__err, 5))
 
-    fig1, ax1 =plt.figure()
 
-    fig1.plot(ftr, key_data, 'o', label='original data')
 
-    fig1.plot(ftr, intercept + slope * ftr, 'r', label='fitted line')
 
-    plt.legend()
+    #
 
-    plt.show()
-
-    fig = plt.subplots()
-    st.pyplot(fig1)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
 
     lns1 = ax.plot(time, ftr, '-', label='FTR in ' + country)
     ax2 = ax.twinx()
@@ -146,3 +136,14 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     st.pyplot(fig)
 
 
+    slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)
+
+    col6.metric("Slope", round(slope, 4))
+    col7.metric("Intercept", round(intercept, 5))
+    col8.metric("R - value", round(r_value, 4))
+
+    col9.metric("p-Value", round(p_value, 4))
+    col10.metric("std_err", round(std__err, 5))
+
+
+    
