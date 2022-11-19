@@ -115,7 +115,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     col8.metric("R - value", round(r_value, 4))
 
     col9.metric("p-Value", round(p_value, 4))
-    col10.metric("std_err", round(std_err, 5))
+    col10.metric("std_err", round(std__err, 5))
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
