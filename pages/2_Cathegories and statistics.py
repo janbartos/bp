@@ -79,7 +79,7 @@ df_stats["Data"] = df_transposed[cathegory].values
 df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
 
 df_sample_size = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
-st.subheader('Sample size: ' + str(len(df_sample_size["Cathegory" == cathegory].values)))
+st.subheader('Sample size: ' + str(len(df_sample_size[df_sample_size["Cathegory"] == cathegory])))
 
 col1, col2, col3, col4, col5 = st.columns(5)
 pearson = stats.pearsonr(df_transposed[cathegory].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
