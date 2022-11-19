@@ -117,8 +117,18 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     col9.metric("p-Value", round(p_value, 4))
     col10.metric("std_err", round(std__err, 5))
 
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
+    fig1, ax1 =plt.figure()
+
+    fig1.plot(ftr, key_data, 'o', label='original data')
+
+    fig1.plot(ftr, intercept + slope * ftr, 'r', label='fitted line')
+
+    plt.legend()
+
+    plt.show()
+
+    fig = plt.subplots()
+    st.pyplot(fig1)
 
     lns1 = ax.plot(time, ftr, '-', label='FTR in ' + country)
     ax2 = ax.twinx()
