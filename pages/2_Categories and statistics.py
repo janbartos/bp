@@ -66,8 +66,8 @@ df_transposed = df_import.set_index("Cathegory").T
 
 
 
-cathegory = st.selectbox(
-        'Select cathegory ',
+category = st.selectbox(
+        'Select category ',
     #df_import["keyword"].values
         df_import["Cathegory"].unique()
     #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
@@ -75,31 +75,31 @@ cathegory = st.selectbox(
 
 df_fertility = pd.read_csv("fr.csv")
 df_stats = pd.DataFrame()
-df_stats["Data"] = df_transposed[cathegory].values
+df_stats["Data"] = df_transposed[category].values
 df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
 
 df_sample_size = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
-st.subheader('Sample size: ' + str(len(df_sample_size[df_sample_size["Cathegory"] == cathegory])))
+st.subheader('Sample size: ' + str(len(df_sample_size[df_sample_size["Cathegory"] == category])))
 
 col1, col2, col3, col4, col5 = st.columns(5)
-pearson = stats.pearsonr(df_transposed[cathegory].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
+pearson = stats.pearsonr(df_transposed[category].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
 col1.metric("Pearson correlation", round(pearson[0], 4))
 col2.metric("p-Value", round(pearson[1], 5))
 col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
-spearman = stats.spearmanr(df_transposed[cathegory].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
+spearman = stats.spearmanr(df_transposed[category].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
 col4.metric("Spearman correlation", round(spearman[0], 4))
 col5.metric("p-Value", round(spearman[1], 5))
 
 time = np.arange(2004, 2021)
 ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
-key_data = df_transposed[cathegory].values
+key_data = df_transposed[category].values
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
 
 lns1 = ax.plot(time, ftr, '-', label='FTR in ' + country)
 ax2 = ax.twinx()
-lns2 = ax2.plot(time, key_data, '-r', label=cathegory)
+lns2 = ax2.plot(time, key_data, '-r', label=category)
 
 # added these three lines
 lns = lns1 + lns2
