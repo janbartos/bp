@@ -149,12 +149,14 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
     fig2, ax3 = plt.subplots()
 
-    (m, b) = np.polyfit(ftr, key_data, 1)
-    print(m, b)
 
-    yp = np.polyval([m, b], ftr)
-    ax3.plot(ftr, yp)
-    ax3.plot(ftr, key_data, 'o', label = 'original data')
+
+
+    abline_values = [slope * i + intercept for i in x]
+
+
+    ax3.plot(ftr, abline_values, 'b')
+    ax3.plot(ftr, key_data, '--', label = 'original data')
     #ax3.plot(ftr, intercept + (slope * ftr), "r", label = "fitted line")
 
     st.pyplot(fig2)
