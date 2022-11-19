@@ -106,17 +106,6 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     key_data = df_transposed[keyword].values
 
 
-
-
-
-    #
-
-
-
-
-
-    #
-
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
@@ -136,6 +125,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     st.pyplot(fig)
 
 
+
     slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)
     col6, col7, col8, col9, col10 = st.columns(5)
 
@@ -151,12 +141,10 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
 
-
     abline_values = [slope * i + intercept for i in ftr]
 
 
-    ax3.plot(ftr, abline_values, 'b')
+    ax3.plot(ftr, abline_values, 'b' , label = "linear regression")
     ax3.plot(ftr, key_data, 'ro', label = 'original data')
-    #ax3.plot(ftr, intercept + (slope * ftr), "r", label = "fitted line")
 
     st.pyplot(fig2)
