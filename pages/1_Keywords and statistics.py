@@ -97,10 +97,25 @@ spearman = stats.spearmanr(df_transposed[keyword].values,df_fertility[df_fertili
 col4.metric("Spearman correlation", round(spearman[0], 4))
 col5.metric("p-Value", round(spearman[1], 5))
 
+
+
+
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
     time = np.arange(2004, 2021)
     ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
     key_data = df_transposed[keyword].values
+
+
+
+    col6, col7, col8, col9, col10 = st.columns(5)
+    slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)
+
+    col6.metric("Slope", round(slope, 4))
+    col7.metric("Intercept", round(intercept, 5))
+    col8.metric("R - value", round(r_value, 4))
+
+    col9.metric("p-Value", round(p_value, 4))
+    col10.metric("std_err", round(std_err, 5))
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
