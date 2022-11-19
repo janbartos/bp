@@ -156,7 +156,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
     ax3.plot(ftr, abline_values, 'b')
-    ax3.plot(ftr, key_data, 'o', label = 'original data')
+    ax3.plot(ftr, key_data, 'ro', label = 'original data')
     #ax3.plot(ftr, intercept + (slope * ftr), "r", label = "fitted line")
 
     st.pyplot(fig2)
