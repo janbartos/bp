@@ -60,7 +60,7 @@ country = st.selectbox(
     'Select country',
     languages.keys())
 
-df_import = pd.read_csv("save2/data_" + languages.get(country) + "_cathegories_corr.csv")
+df_import = pd.read_csv("save2/data_groupby_" + languages.get(country) + ".csv")
 
 
 cathegory = st.selectbox(
