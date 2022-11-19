@@ -120,7 +120,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
     ax.grid()
     ax.set_xlabel("Years")
-    ax.set_ylabel(r"Fertility")
+    ax.set_ylabel(r"Fertility rate")
     ax2.set_ylabel(r"Searched")
     st.pyplot(fig)
 
@@ -146,5 +146,8 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
     ax3.plot(ftr, abline_values, 'b' , label = "linear regression")
     ax3.plot(ftr, key_data, 'ro', label = 'original data')
+    ax3.grid()
+    ax3.set_xlabel(r"Fertility rate")
+    ax3.set_ylabel(r"Searched")
 
     st.pyplot(fig2)
