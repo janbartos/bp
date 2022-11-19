@@ -124,7 +124,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     ax2.set_ylabel(r"Searched")
     st.pyplot(fig)
 
-
+    st.header('Linear regression')
 
     slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)
     col6, col7, col8, col9, col10 = st.columns(5)
@@ -146,7 +146,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
     ax3.plot(ftr, abline_values, 'b' , label = "linear regression")
     ax3.plot(ftr, key_data, 'ro', label = 'original data')
-    ax3.legend(["FTR", str(keyword)])
+    ax3.legend(["FTR in" + country, str(keyword)])
     ax3.grid()
     ax3.set_xlabel(r"Fertility rate")
     ax3.set_ylabel(r"Searched")
