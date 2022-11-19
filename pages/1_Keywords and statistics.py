@@ -144,9 +144,9 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     abline_values = [slope * i + intercept for i in ftr]
 
 
-    ax3.plot(ftr, abline_values, 'b' , label = "linear regression")
-    ax3.plot(ftr, key_data, 'ro', label = 'original data')
-    ax3.legend("FTR", "Searched", loc=0)
+    line1 = ax3.plot(ftr, abline_values, 'b' , label = "linear regression")
+    line2 = ax3.plot(ftr, key_data, 'ro', label = 'original data')
+    ax3.legend(handles =[line1, line2])
     ax3.grid()
     ax3.set_xlabel(r"Fertility rate")
     ax3.set_ylabel(r"Searched")
