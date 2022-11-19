@@ -107,7 +107,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
 
-    col6, col7, col8, col9, col10 = st.columns(5)
+
 
     #
 
@@ -137,6 +137,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
     slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)
+    col6, col7, col8, col9, col10 = st.columns(5)
 
     col6.metric("Slope", round(slope, 4))
     col7.metric("Intercept", round(intercept, 5))
@@ -146,4 +147,3 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     col10.metric("std_err", round(std__err, 5))
 
 
-    
