@@ -164,10 +164,14 @@ c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 base2 = alt.Chart(df_uni_br).encode(alt.X('Time'))
 
 
-d = base2.mark_line(color='red').encode(
+d = base2.mark_line(color='red').transform_calculate(
+    color='"meaffsure_max"'
+).encode(
     alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
 )
-e = base2.mark_line().encode(
+e = base2.mark_line().transform_calculate(
+    color='"meaffsufre_max"'
+).encode(
     alt.Y('University', scale=alt.Scale(domain=(4, 18)))
 )
 
