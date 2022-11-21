@@ -136,17 +136,32 @@ df_import_us = df_import_us.set_index("Cathegory").T
 df_fert_us = df_fertility[df_fertility.LOCATION == "USA"]['Value'].values[:17]
 df_fert_br = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
+time = np.arange(2004, 2021)
+
 df_uni_us = pd.DataFrame()
 df_uni_us["University"] = df_import_us["University"].values
 df_uni_us["FTR"] = df_fert_us
+df_uni_us["Time"] = time
 
 
 df_uni_br = pd.DataFrame()
 df_uni_br["University"] = df_import_br["University"].values
 df_uni_br["FTR"] = df_fert_br
+df_uni_br["Time"] = time
 
 st.dataframe(df_uni_br)
 st.dataframe(df_uni_us)
+
+a = alt.Chart(df_uni_us).mark_area().encode(
+    x='University',
+    y='Time'
+)
+b = alt.Chart(df_uni_us).mark_area().encode(
+    x='FTR',
+    y='Time'
+)
+c = alt.layer(a, b)
+
 
 chart1 = alt.Chart(df_uni_us).mark_line().encode(
     x='University',
@@ -155,4 +170,4 @@ chart1 = alt.Chart(df_uni_us).mark_line().encode(
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
 
-st.altair_chart(chart1)
+st.altair_chart(c)
