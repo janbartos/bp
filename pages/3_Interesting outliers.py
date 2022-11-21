@@ -171,7 +171,7 @@ e = base2.mark_line().encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
 )
 
-f = alt.layer(a, b).resolve_scale(y='independent').interactive()
+f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
 
 
