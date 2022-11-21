@@ -43,7 +43,7 @@ st.subheader('Marx')
 
 keyword = "marx"
 
-df_stats = pd.DataFrame()
+
 df_stats["Data"] = df_transposed[keyword].values
 
 col6, col7, col8, col9, col10 = st.columns(5)
@@ -58,6 +58,7 @@ col10.metric("p-Value", round(spearman[1], 5))
 st.subheader("Sindicatos - Work unions")
 
 keyword = "sindicatos"
+df_stats["Data"] = df_transposed[keyword].values
 
 col11, col12, col13, col14, col15 = st.columns(5)
 pearson = stats.pearsonr(df_transposed[keyword].values, df_fert)
