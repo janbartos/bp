@@ -145,8 +145,11 @@ df_uni_br = pd.DataFrame()
 df_uni_br["University"] = df_import_br["University"].values
 df_uni_br["FTR"] = df_fert_br
 
-chart1 = alt.Chart(df_uni_us).mark_line()
+st.dataframe(df_uni_br)
+st.dataframe(df_uni_us)
 
-chart2 = alt.Chart(df_uni_br).mark_line()
+#chart1 = alt.Chart(df_uni_us).mark_line()
 
-st.altair_chart(chart1 | chart2)
+#chart2 = alt.Chart(df_uni_br).mark_line()
+
+#st.altair_chart(chart1 | chart2)
