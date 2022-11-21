@@ -156,7 +156,7 @@ base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
 a = base1.mark_line(color='red').encode(
     alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
 )
-b = base1.mark_line().encode(
+b = base1.mark_line().transform_fold(['University']).encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
 )
 c = alt.layer(a, b).resolve_scale(y='independent').interactive()
@@ -164,7 +164,7 @@ c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 base2 = alt.Chart(df_uni_br).encode(alt.X('Time'))
 
 
-d = base2.mark_line().encode(
+d = base2.mark_line(color='red').encode(
     alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
 )
 e = base2.mark_line().encode(
