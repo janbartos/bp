@@ -143,13 +143,13 @@ df_uni_us["University"] = df_import_us["University"].values
 df_uni_us["FTR"] = df_fert_us
 df_uni_us["Time"] = time
 
-
+st.dataframe(df_uni_us)
 df_uni_br = pd.DataFrame()
 df_uni_br["University"] = df_import_br["University"].values
 df_uni_br["FTR"] = df_fert_br
 df_uni_br["Time"] = time
 
-
+st.dataframe(df_uni_br)
 base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
 
 
