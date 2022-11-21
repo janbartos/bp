@@ -155,12 +155,16 @@ base1 = alt.Chart(df_uni_us).transform_calculate(
     b="'shade1'",
 ).encode(alt.X('Time'))
 
+scale = alt.Scale(domain=["line", "shade1"], range=['red', 'lightblue'])
+
 
 a = base1.mark_line(color='red').encode(
-    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15))),
+    color=alt.Color('line:N', scale=scale, title='')
 )
 b = base1.mark_line().encode(
-    alt.Y('University', scale=alt.Scale(domain=(10, 45)))
+    alt.Y('University', scale=alt.Scale(domain=(10, 45))),
+    color=alt.Color('shade1:N', scale=scale, title='')
 )
 c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
