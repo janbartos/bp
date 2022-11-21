@@ -154,7 +154,8 @@ base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
 
 
 a = base1.mark_line().encode(
-    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15))), color='red'
+    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15))),
+    color='red'
 )
 b = base1.mark_line().encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
@@ -165,7 +166,7 @@ base2 = alt.Chart(df_uni_br).encode(alt.X('Time'))
 
 
 d = base1.mark_line().encode(
-    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15))), color='red'
+    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
 )
 e = base1.mark_line().encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
