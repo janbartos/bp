@@ -168,7 +168,7 @@ d = base2.mark_line().encode(
     alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
 )
 e = base2.mark_line().encode(
-    alt.Y('University', scale=alt.Scale(domain=(8, 18)))
+    alt.Y('University', scale=alt.Scale(domain=(4, 18)))
 )
 
 f = alt.layer(d, e).resolve_scale(y='independent').interactive()
