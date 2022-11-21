@@ -159,11 +159,11 @@ scale = alt.Scale(domain=["FTR", "University"], range=['red', 'lightblue'])
 
 
 a = base1.mark_line(color='red').encode(
-    x = alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)) ),
+    y = alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)) ),
     color=alt.Color('FTR:N', scale=scale, title='')
 )
 b = base1.mark_line().encode(
-    x = alt.Y('University', scale=alt.Scale(domain=(10, 45))),
+    y = alt.Y('University', scale=alt.Scale(domain=(10, 45))),
     color=alt.Color('University:N', scale=scale, title='')
 )
 c = alt.layer(a, b).resolve_scale(y='independent').interactive()
