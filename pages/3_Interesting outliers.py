@@ -149,9 +149,6 @@ df_uni_br["University"] = df_import_br["University"].values
 df_uni_br["FTR"] = df_fert_br
 df_uni_br["Time"] = time
 
-st.dataframe(df_uni_br)
-st.dataframe(df_uni_us)
-
 
 base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
 
@@ -162,7 +159,7 @@ a = base1.mark_line().encode(
 b = base1.mark_line().encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
 )
-c = alt.layer(a, b).resolve_scale(y='independent')
+c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
 base2 = alt.Chart(df_uni_br).encode(alt.X('Time'))
 
