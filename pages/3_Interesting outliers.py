@@ -153,21 +153,31 @@ st.dataframe(df_uni_br)
 st.dataframe(df_uni_us)
 
 
-base = alt.Chart(df_uni_us).encode(alt.X('Time'))
+base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
 
 
-a = base.mark_line().encode(
+a = base1.mark_line().encode(
     alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
 )
-b = base.mark_line().encode(
+b = base1.mark_line().encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
 )
 c = alt.layer(a, b).resolve_scale(y='independent')
 
+base2 = alt.Chart(df_uni_br).encode(alt.X('Time'))
+
+
+d = base1.mark_line().encode(
+    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+)
+e = base1.mark_line().encode(
+    alt.Y('University', scale=alt.Scale(domain=(10, 45)))
+)
+f = alt.layer(a, b).resolve_scale(y='independent')
 
 
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
 
-st.altair_chart(c)
-st.altair_chart(base)
+st.altair_chart(c | f)
+
