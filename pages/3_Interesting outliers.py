@@ -153,12 +153,12 @@ st.dataframe(df_uni_br)
 st.dataframe(df_uni_us)
 
 a = alt.Chart(df_uni_us).mark_area().encode(
-    x='University',
-    y='Time'
+    x='Time',
+    y='University'
 )
 b = alt.Chart(df_uni_us).mark_area().encode(
-    x='FTR',
-    y='Time'
+    x='Time',
+    y='FTR'
 )
 c = alt.layer(a, b)
 
