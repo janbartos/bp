@@ -156,10 +156,10 @@ st.dataframe(df_uni_us)
 base = alt.Chart(df_uni_us).encode(alt.X('Time'))
 
 
-a = base.mark_line.encode(
+a = base.mark_line().encode(
     alt.Y('FTR')
 )
-b = alt.Chart(df_uni_us).mark_area().encode(
+b = base.mark_line().encode(
     alt.Y('University')
 )
 c = alt.layer(a, b).resolve_scale(y='independent')
