@@ -112,7 +112,7 @@ chart_data = pd.DataFrame({
 })
 
 bar_chart = alt.Chart(chart_data).mark_bar().encode(
-        x="Year:O",
+        x="Year:T",
         y="Results:Q",
         color="Party:N"
     )
