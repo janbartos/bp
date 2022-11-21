@@ -165,10 +165,10 @@ base2 = alt.Chart(df_uni_br).encode(alt.X('Time'))
 
 
 d = base2.mark_line().encode(
-    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+    alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
 )
 e = base2.mark_line().encode(
-    alt.Y('University', scale=alt.Scale(domain=(10, 45)))
+    alt.Y('University', scale=alt.Scale(domain=(8, 18)))
 )
 
 f = alt.layer(d, e).resolve_scale(y='independent').interactive()
