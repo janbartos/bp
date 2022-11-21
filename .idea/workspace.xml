@@ -38,7 +38,7 @@
       <updated>1668853335477</updated>
       <workItem from="1668853337882" duration="9446000" />
       <workItem from="1668970559272" duration="3842000" />
-      <workItem from="1669038782573" duration="13435000" />
+      <workItem from="1669038782573" duration="13654000" />
     </task>
     <task id="LOCAL-00001" summary="Interesting outliers headers">
       <created>1669039167144</created>
@@ -313,7 +313,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669065069793</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Interesting outliers headers">
+      <created>1669065144653</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1669065144653</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Interesting outliers headers">
+      <created>1669065233793</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1669065233793</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
