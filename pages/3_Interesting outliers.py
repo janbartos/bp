@@ -148,8 +148,8 @@ df_uni_br["FTR"] = df_fert_br
 st.dataframe(df_uni_br)
 st.dataframe(df_uni_us)
 
-#chart1 = alt.Chart(df_uni_us).mark_line()
+chart1 = alt.Chart(df_uni_us).mark_line()
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
 
-#st.altair_chart(chart1 | chart2)
+st.altair_chart(chart1)
