@@ -110,7 +110,7 @@ chart_data = pd.DataFrame({
      "Party": ["PT", "PSDB", "PT", "PSDB", "PT", "PSDB", "PT", "PSDB", "PT", "PSL"]
 
 })
-
+#https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/unpd_egm_200203_countrypapers_what_will_happen_to_brazilian_fertility_goldani.pdf
 bar_chart = alt.Chart(chart_data).mark_bar().encode(
         x="Year:O",
         y="Results:Q",
@@ -118,3 +118,35 @@ bar_chart = alt.Chart(chart_data).mark_bar().encode(
         tooltip=['Candidates', 'Party', 'Results']
     )
 st.altair_chart(bar_chart, use_container_width=True)
+
+st.header('Universities in Americas')
+
+
+df_import_br = pd.read_csv("save2/df_data_groupby_br.csv")
+df_import_us = pd.read_csv("save2/df_data_groupby_us.csv")
+
+df_fertility = pd.read_csv("fr.csv")
+
+df_import_br = df_import_br.drop(['2021'], axis=1)
+df_import_us = df_import_us.drop(['2021'], axis=1)
+
+df_import_br = df_import_br.set_index("Cathegory").T
+df_import_us = df_import_us.set_index("Cathegory").T
+
+df_fert_us = df_fertility[df_fertility.LOCATION == "USA"]['Value'].values[:17]
+df_fert_br = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
+
+df_uni_us = pd.DataFrame()
+df_uni_us["Universities"] = df_import_us["Universities"].values
+df_uni_us["FTR"] = df_fert_us.values
+
+
+df_uni_br = pd.DataFrame()
+df_uni_br["Universities"] = df_import_br["Universities"].values
+df_uni_br["FTR"] = df_fert_br.values
+
+chart1 = alt.Chart(df_uni_us).mark_line()
+
+chart2 = alt.Chart(df_uni_br).mark_line()
+
+st.altair_chart(chart1 | chart2)
