@@ -148,7 +148,10 @@ df_uni_br["FTR"] = df_fert_br
 st.dataframe(df_uni_br)
 st.dataframe(df_uni_us)
 
-chart1 = alt.Chart(df_uni_us).mark_line()
+chart1 = alt.Chart(df_uni_us).mark_line().encode(
+    x='University',
+    y='FTR'
+)
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
 
