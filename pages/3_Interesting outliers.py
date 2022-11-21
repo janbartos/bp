@@ -106,7 +106,7 @@ chart_data = pd.DataFrame({
 
      "Candidates": ["Luiz Inácio Lula da Silva", "José Serra", "Luiz Inácio Lula da Silva", "Geraldo Alckmin", "Dilma Rousseff", "José Serra", "Dilma Rousseff", "Aécio Neves",	"Jair Bolsonaro", "Fernando Haddad" ],
      "Results":  [61.27, 38.73, 60.83, 39.17, 56.05, 43.95, 51.64, 48.36, 44.87, 55.13],
-     "Year": [2002, 2002, 2006, 2006, 2010, 2010, 2014, 2014, 2020, 2020],
+     "Year": [2002, 2002, 2006, 2006, 2010, 2010, 2014, 2014, 2018, 2018],
      "Party": ["PT", "PSDB", "PT", "PSDB", "PT", "PSDB", "PT", "PSDB", "PSL", "PT"]
 
 })
