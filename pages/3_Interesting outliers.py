@@ -160,8 +160,6 @@ a = base1.mark_line().encode(
 )
 b = base1.mark_line().encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
-).configure_mark(
-    color='blue'
 )
 c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
@@ -175,9 +173,8 @@ d = base1.mark_line().encode(
 )
 e = base1.mark_line().encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
-).configure_mark(
-    color='blue'
 )
+
 f = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
 
