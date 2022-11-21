@@ -112,8 +112,8 @@ chart_data = pd.DataFrame({
 })
 
 bar_chart = alt.Chart(chart_data).mark_bar().encode(
-        x="Year(Year):O",
-        y="Results(Results):Q",
+        x="year(Year):O",
+        y="results(Results):Q",
         color="Party:N"
     )
 st.altair_chart(bar_chart, use_container_width=True)
