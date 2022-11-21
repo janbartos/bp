@@ -138,12 +138,12 @@ df_fert_br = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
 df_uni_us = pd.DataFrame()
 df_uni_us["University"] = df_import_us["University"].values
-df_uni_us["FTR"] = df_fert_us.values
+df_uni_us["FTR"] = df_fert_us
 
 
 df_uni_br = pd.DataFrame()
 df_uni_br["University"] = df_import_br["University"].values
-df_uni_br["FTR"] = df_fert_br.values
+df_uni_br["FTR"] = df_fert_br
 
 chart1 = alt.Chart(df_uni_us).mark_line()
 
