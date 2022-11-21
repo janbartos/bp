@@ -150,13 +150,16 @@ df_uni_br["FTR"] = df_fert_br
 df_uni_br["Time"] = time
 
 st.dataframe(df_uni_br)
-base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
+base1 = alt.Chart(df_uni_us).transform_calculate(
+    a="'line'",
+    b="'shade1'",
+).encode(alt.X('Time'))
 
 
-a = base1.mark_line(color='red').transform_fold(['FTR']).encode(
+a = base1.mark_line(color='red').encode(
     alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
 )
-b = base1.mark_line().transform_fold(['University']).encode(
+b = base1.mark_line().encode(
     alt.Y('University', scale=alt.Scale(domain=(10, 45)))
 )
 c = alt.layer(a, b).resolve_scale(y='independent').interactive()
