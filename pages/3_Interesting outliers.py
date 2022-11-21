@@ -7,6 +7,7 @@ import streamlit.components.v1 as components
 from scipy import stats
 from scipy.optimize import curve_fit
 from math import exp
+import altair as alt
 
 
 st.title("Interesting outliers")
@@ -101,9 +102,18 @@ ax.set_ylabel(r"Fertility")
 ax2.set_ylabel(r"Searched")
 st.pyplot(fig)
 
-chart_data = pd.DataFrame(
-    #[61.27, 60.83, 56.05, 51.64, 44.87], [38.73, 39.17, 43.95, 48.36, 55.13]
-    np.array([[61.27, 38.73], [60.83, 39.17], [56.05, 43.95], [51.64, 48.36 ], [44.87, 55.13]]),
-    columns=["PT", "Other Candidate"])
+chart_data = pd.DataFrame({
 
-st.bar_chart(chart_data)
+     "Candidates": ["Luiz Inácio Lula da Silva", "José Serra", "Luiz Inácio Lula da Silva", "Geraldo Alckmin", "Dilma Rousseff", "José Serra", "Dilma Rousseff", "Aécio Neves",	"Jair Bolsonaro", "Fernando Haddad" ],
+     "Results":  [61.27, 38.73, 60.83, 39.17, 56.05, 43.95, 51.64, 48.36, 44.87, 55.13],
+     "Year": [2002, 2002, 2006, 2006, 2010, 2010, 2014, 2014, 2020, 2020],
+     "Party": ["PT", "PSDB", "PT", "PSDB", "PT", "PSDB", "PT", "PSDB", "PSL", "PT"]
+
+})
+
+bar_chart = alt.Chart(chart_data).mark_bar().encode(
+        x="Year(Year):O",
+        y="Results(Results):Q",
+        color="Party:N"
+    )
+st.altair_chart(chart_data)
