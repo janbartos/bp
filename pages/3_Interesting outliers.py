@@ -152,22 +152,22 @@ df_uni_br["Time"] = time
 st.dataframe(df_uni_br)
 st.dataframe(df_uni_us)
 
-a = alt.Chart(df_uni_us).mark_area().encode(
-    x='Time',
-    y='University'
+
+base = alt.Chart(df_uni_us).encode(alt.X('Time'))
+
+
+a = base.mark_line.encode(
+    alt.Y('FTR')
 )
 b = alt.Chart(df_uni_us).mark_area().encode(
-    x='Time',
-    y='FTR'
+    alt.Y('University')
 )
-c = alt.layer(a, b)
+c = alt.layer(a, b).resolve_scale(y='independent')
 
 
-chart1 = alt.Chart(df_uni_us).mark_line().encode(
-    x='University',
-    y='FTR'
-)
+
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
 
 st.altair_chart(c)
+st.altair_chart(base)
