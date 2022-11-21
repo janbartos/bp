@@ -87,8 +87,8 @@ ax = fig.add_subplot(111)
 lns1 = ax.plot(time, ftr, '-', label='FTR in Brasil')
 ax2 = ax.twinx()
 lns2 = ax2.plot(time, Guevara_data, '-r', label="Guevara")
-lns3 = ax2.plot(time, Marx_data, "-r", label="Marx")
-lns4 = ax2.plot(time, Sindicatos_data, "-r", label="Sindicados")
+lns3 = ax2.plot(time, Marx_data, "-o", label="Marx")
+lns4 = ax2.plot(time, Sindicatos_data, "-b", label="Sindicados")
 
 # added these three lines
 lns = lns1 + lns2 + lns4 + lns3
@@ -100,3 +100,9 @@ ax.set_xlabel("Years")
 ax.set_ylabel(r"Fertility")
 ax2.set_ylabel(r"Searched")
 st.pyplot(fig)
+
+chart_data = pd.DataFrame(
+   [[61.27,60.83, 56.05, 51.64, 44.87],[38.73, 39.17, 43.95, 48.36, 55.13]],
+    columns=["PT", "Other Candidate"])
+
+st.bar_chart(chart_data)
