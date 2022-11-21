@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 from matplotlib import rc
 import streamlit.components.v1 as components
 from scipy import stats
+from scipy.optimize import curve_fit
+from math import exp
+
 
 
 st.set_page_config(
@@ -27,6 +30,18 @@ plt.rcParams.update({
     "figure.edgecolor": "black",
     "savefig.facecolor": "black",
     "savefig.edgecolor": "black"})
+
+def func1(x, a, b, c):
+    return a*x**2+b*x+c
+
+def func2(x, a, b, c):
+    return a*x**3+b*x+c
+
+def func3(x, a, b, c):
+    return a*x**3+b*x**2+c
+
+def func4(x, a, b, c):
+    return a*exp(b*x)+c
 
 
 st.title("FTR analysis using Google Trends and Google Ngram data")
@@ -76,22 +91,24 @@ category = st.selectbox(
 df_fertility = pd.read_csv("fr.csv")
 df_stats = pd.DataFrame()
 df_stats["Data"] = df_transposed[category].values
-df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
+df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
+
+df_fert = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
 
 df_sample_size = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
 st.subheader('Sample size: ' + str(len(df_sample_size[df_sample_size["Cathegory"] == category])))
 
 col1, col2, col3, col4, col5 = st.columns(5)
-pearson = stats.pearsonr(df_transposed[category].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
+pearson = stats.pearsonr(df_transposed[category].values, df_fert)
 col1.metric("Pearson correlation", round(pearson[0], 4))
 col2.metric("p-Value", round(pearson[1], 5))
 col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
-spearman = stats.spearmanr(df_transposed[category].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
+spearman = stats.spearmanr(df_transposed[category].values, df_fert)
 col4.metric("Spearman correlation", round(spearman[0], 4))
 col5.metric("p-Value", round(spearman[1], 5))
 
 time = np.arange(2004, 2021)
-ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
+ftr = df_fert
 key_data = df_transposed[category].values
 
 fig = plt.figure()
@@ -111,3 +128,44 @@ ax.set_xlabel("Years")
 ax.set_ylabel(r"Fertility")
 ax2.set_ylabel(r"Searched")
 st.pyplot(fig)
+
+st.header('Linear regression')
+
+slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)
+col6, col7, col8, col9, col10 = st.columns(5)
+
+col6.metric("Slope", round(slope, 4))
+col7.metric("Intercept", round(intercept, 4))
+col8.metric("R - value", round(r_value, 4))
+
+col9.metric("p-Value", round(p_value, 4))
+col10.metric("std_err", round(std__err, 4))
+
+x = ftr
+y = key_data
+
+params, _ = curve_fit(func1, x, y)
+a, b, c = params[0], params[1], params[2]
+yfit1 = a*x**2+b*x+c
+
+
+fig2, ax3 = plt.subplots()
+
+abline_values = [slope * i + intercept for i in ftr]
+
+ax3.plot(ftr, abline_values, 'b', label="linear regression")
+ax3.plot(ftr, key_data, 'ro', label='original data')
+ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
+#ax3.legend(["Original data", "Regressive line"])
+ax3.legend(loc='best', fancybox=True, shadow=True)
+ax3.grid()
+ax3.set_xlabel(r"Fertility rate")
+ax3.set_ylabel(r"Searched")
+
+st.pyplot(fig2)
+
+
+
+
+
+
