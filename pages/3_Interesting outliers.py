@@ -150,7 +150,7 @@ df_uni_br["FTR"] = df_fert_br
 df_uni_br["Time"] = time
 
 st.dataframe(df_uni_br)
-base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
+base1 = alt.Chart(df_uni_us).encode(alt.X('Time'), color="red")
 
 
 a = base1.mark_line().encode(
