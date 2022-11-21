@@ -116,4 +116,4 @@ bar_chart = alt.Chart(chart_data).mark_bar().encode(
         y="Results(Results):Q",
         color="Party:N"
     )
-st.altair_chart(chart_data)
+st.altair_chart(bar_chart, use_container_width=True)
