@@ -102,7 +102,7 @@ ax2.set_ylabel(r"Searched")
 st.pyplot(fig)
 
 chart_data = pd.DataFrame(
-   [[61.27,60.83, 56.05, 51.64, 44.87],[38.73, 39.17, 43.95, 48.36, 55.13]],
+    np.array([[61.27, 60.83, 56.05, 51.64, 44.87], [38.73, 39.17, 43.95, 48.36, 55.13]]),
     columns=["PT", "Other Candidate"])
 
 st.bar_chart(chart_data)
