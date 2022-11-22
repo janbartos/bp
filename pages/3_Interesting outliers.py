@@ -191,6 +191,6 @@ with col17:
 
 
 
-st.altair_chart(c | f)
+st.altair_chart(c | f, use_container_width=True)
 
 
