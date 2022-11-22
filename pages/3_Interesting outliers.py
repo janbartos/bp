@@ -162,7 +162,7 @@ b = base1.mark_line().encode(
 )
 c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
-base2 = alt.Chart(df_uni_br, title= "🔵 University  🔴 FTR in USA").encode(alt.X('Time'))
+base2 = alt.Chart(df_uni_br, title= "🔵 University  🔴 FTR in Brazil").encode(alt.X('Time'))
 
 
 d = base2.mark_line(color='red').transform_calculate(
@@ -179,15 +179,6 @@ e = base2.mark_line().transform_calculate(
 f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
 
-
-#chart2 = alt.Chart(df_uni_br).mark_line()
-
-col16, col17 = st.columns(2)
-
-with col16:
-    st.text("🔵 University  🔴 FTR in USA")
-with col17:
-    st.text("🔵 University  🔴 FTR in Brazil")
 
 
 
