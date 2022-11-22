@@ -150,8 +150,9 @@ df_uni_br["FTR"] = df_fert_br
 df_uni_br["Time"] = time
 
 
-fig = plt.figure()
-ax = fig.add_subplot(112)
+
+
+fig, (ax1, ax3) = plt.subplots(1, 2)
 
 lns1 = ax.plot(time, ftr, '-', label='FTR in ' + df_uni_us["FTR"].values)
 ax2 = ax.twinx()
@@ -167,7 +168,7 @@ ax.set_xlabel("Years")
 ax.set_ylabel(r"Fertility")
 ax2.set_ylabel(r"Searched")
 
-ax3 = fig.add_subplot(121)
+
 
 lns3 = ax3.plot(time, ftr, '-', label='FTR in ' + df_uni_br["FTR"].values)
 ax4 = ax3.twinx()

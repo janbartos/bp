@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="Interesting outliers headers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/3_Interesting outliers.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_Interesting outliers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,14 +21,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/janba/Documents/GitHub/bp"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/janba/Documents/GitHub/bp&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -39,13 +40,7 @@
       <workItem from="1668853337882" duration="9446000" />
       <workItem from="1668970559272" duration="3842000" />
       <workItem from="1669038782573" duration="16304000" />
-    </task>
-    <task id="LOCAL-00019" summary="Interesting outliers headers">
-      <created>1669055918352</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1669055918352</updated>
+      <workItem from="1669137038451" duration="608000" />
     </task>
     <task id="LOCAL-00020" summary="Interesting outliers headers">
       <created>1669055955971</created>
@@ -383,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669068023022</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Interesting outliers headers">
+      <created>1669137535455</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1669137535456</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
