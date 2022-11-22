@@ -250,7 +250,7 @@ with tab3:
     pearson = stats.pearsonr(df_con_us["Consumerism"].values , df_con_us["FTR"].values )
     col1.metric("Pearson correlation", round(pearson[0], 4))
     col2.metric("p-Value", round(pearson[1], 5))
-    col3.metric("Covariance", round(df_con_us[["Consumerism", "FTR"]].cov()["University"].values[1],4))
+    col3.metric("Covariance", round(df_con_us[["Consumerism", "FTR"]].cov()["Consumerism"].values[1],4))
     spearman = stats.spearmanr(df_con_us["Consumerism"].values, df_con_us["FTR"].values)
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", round(spearman[1], 5))
