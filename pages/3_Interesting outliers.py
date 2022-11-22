@@ -267,9 +267,53 @@ with tab3:
     c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
     st.altair_chart(c)
+    #https://www.pnas.org/doi/10.1073/pnas.1909857117
 
 with tab4:
     st.header('Education in Czechia')
+    df_import_cz = pd.read_csv("save2/df_data_groupby_cz.csv")
+
+    df_fertility = pd.read_csv("fr.csv")
+
+    df_import_cz = df_import_cz.drop(['2021'], axis=1)
+
+    df_import_cz = df_import_cz.set_index("Cathegory").T
+
+    df_fert_cz = df_fertility[df_fertility.LOCATION == "CZE"]['Value'].values[:17]
+
+    time = np.arange(2004, 2021)
+
+    df_edu_cz = pd.DataFrame()
+    df_edu_cz["Education"] = df_edu_cz["Education"].values
+    df_edu_cz["FTR"] = df_fert_cz
+    df_edu_cz["Time"] = time
+
+
+    st.subheader('Education category in Czechia')
+
+
+    col1, col2, col3, col4, col5 = st.columns(5)
+    pearson = stats.pearsonr(df_edu_cz["Education"].values , df_edu_cz["FTR"].values )
+    col1.metric("Pearson correlation", round(pearson[0], 4))
+    col2.metric("p-Value", round(pearson[1], 5))
+    col3.metric("Covariance", round(df_edu_cz[["Education", "FTR"]].cov()["Education"].values[1],4))
+    spearman = stats.spearmanr(df_edu_cz["Education"].values, df_edu_cz["FTR"].values)
+    col4.metric("Spearman correlation", round(spearman[0], 4))
+    col5.metric("p-Value", round(spearman[1], 5))
+
+
+    base1 = alt.Chart(df_edu_cz, title="🔵 Consumerism  🔴 FTR in USA" ).encode(alt.X('Time'))
+
+    a = base1.mark_line(color='red').encode(
+        alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+    )
+    b = base1.mark_line().encode(
+        alt.Y('Education', scale=alt.Scale(domain=(10, 45)))
+    )
+    c = alt.layer(a, b).resolve_scale(y='independent').interactive()
+
+    st.altair_chart(c)
+
 #Education
 #univerzita, zeměpis, chemie, vysoká škola
 with tab5:
