@@ -305,10 +305,10 @@ with tab4:
     base1 = alt.Chart(df_edu_cz, title="🔵 Consumerism  🔴 FTR in USA" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+        alt.Y('FTR', scale=alt.Scale(domain=(1.2, 1.75)))
     )
     b = base1.mark_line().encode(
-        alt.Y('Education', scale=alt.Scale(domain=(10, 45)))
+        alt.Y('Education', scale=alt.Scale(domain=(26, 40)))
     )
     c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
