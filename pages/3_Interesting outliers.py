@@ -182,18 +182,13 @@ f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
 
-col16, col17, col18, col19, col20 = st.columns(5)
+col16, col17 = st.columns(2)
 
 with col16:
-    st.text("🔵 FTR in USA")
+    st.text("🔵 FTR in USA  🔴 University")
 with col17:
-    st.text("🔴 University")
-with col18:
-    st.text("             ")
-with col19:
-    st.text("🔵 FTR in Brazil")
-with col20:
-    st.text("🔴 University")
+    st.text("🔵 FTR in Brazil 🔴 University")
+
 
 
 st.altair_chart(c | f)
