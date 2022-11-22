@@ -302,7 +302,7 @@ with tab4:
     col5.metric("p-Value", round(spearman[1], 5))
 
 
-    base1 = alt.Chart(df_edu_cz, title="🔵 Consumerism  🔴 FTR in USA" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_edu_cz, title="🔵 Education  🔴 FTR in Czechia" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
         alt.Y('FTR', scale=alt.Scale(domain=(1.2, 1.75)))
@@ -313,6 +313,59 @@ with tab4:
     c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
     st.altair_chart(c)
+
+    df_import = pd.read_csv("df_data_cz.csv")
+    df_import = df_import.drop(['2021'], axis=1)
+    df_transposed = df_import.set_index("keyword").T
+
+
+
+
+    df_stats = pd.DataFrame()
+    df_stats["Data"] = df_transposed["guevara"].values
+    df_stats["FTR"] = df_fert_cz
+
+    st.subheader('Univerzita')
+    keyword = "Univerzita"
+
+    col1, col2, col3, col4, col5 = st.columns(5)
+    pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
+    col1.metric("Pearson correlation", round(pearson[0], 4))
+    col2.metric("p-Value", round(pearson[1], 5))
+    col3.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
+    spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
+    col4.metric("Spearman correlation", round(spearman[0], 4))
+    col5.metric("p-Value", round(spearman[1], 5))
+
+    st.subheader('zeměpis')
+
+    keyword = "zeměpis"
+
+    df_stats["Data"] = df_transposed[keyword].values
+
+    col6, col7, col8, col9, col10 = st.columns(5)
+    pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
+    col6.metric("Pearson correlation", round(pearson[0], 4))
+    col7.metric("p-Value", round(pearson[1], 5))
+    col8.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
+    spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
+    col9.metric("Spearman correlation", round(spearman[0], 4))
+    col10.metric("p-Value", round(spearman[1], 5))
+
+    st.subheader("chemie")
+
+    keyword = "chemie"
+    df_stats["Data"] = df_transposed[keyword].values
+
+    col11, col12, col13, col14, col15 = st.columns(5)
+    pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
+    col11.metric("Pearson correlation", round(pearson[0], 4))
+    col12.metric("p-Value", round(pearson[1], 5))
+    col13.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
+    spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
+    col14.metric("Spearman correlation", round(spearman[0], 4))
+    col15.metric("p-Value", round(spearman[1], 5))
+
 
 #Education
 #univerzita, zeměpis, chemie, vysoká škola
