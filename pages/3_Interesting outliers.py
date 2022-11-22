@@ -143,7 +143,7 @@ df_uni_us["University"] = df_import_us["University"].values
 df_uni_us["FTR"] = df_fert_us
 df_uni_us["Time"] = time
 
-st.dataframe(df_uni_us)
+
 df_uni_br = pd.DataFrame()
 df_uni_br["University"] = df_import_br["University"].values
 df_uni_br["FTR"] = df_fert_br
@@ -151,7 +151,7 @@ df_uni_br["Time"] = time
 
 
 
-st.dataframe(df_uni_br)
+
 base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
 
 a = base1.mark_line(color='red').encode(
@@ -185,13 +185,13 @@ f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 col16, col17, col18, col19 = st.columns(4)
 
 with col16:
-    st.subheader("🔵 FTR in USA")
+    st.text("🔵 FTR in USA")
 with col17:
-    st.subheader("🔴 University")
+    st.text("🔴 University")
 with col18:
-    st.subheader("🔵 FTR in Brazil")
+    st.text("🔵 FTR in Brazil")
 with col19:
-    st.subheader("🔴 University")
+    st.text("🔴 University")
 
 
 st.altair_chart(c | f)
