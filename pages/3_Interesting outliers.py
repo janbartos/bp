@@ -155,12 +155,10 @@ df_uni_br["Time"] = time
 base1 = alt.Chart(df_uni_us, title="🔵 University  🔴 FTR in USA" ).encode(alt.X('Time'))
 
 a = base1.mark_line(color='red').encode(
-    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15))),
-    opacity=alt.Opacity('line_label', legend=alt.Legend(title=""))
+    alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
 )
 b = base1.mark_line().encode(
-    alt.Y('University', scale=alt.Scale(domain=(10, 45))),
-    opacity=alt.Opacity('line_label1', legend=alt.Legend(title=""))
+    alt.Y('University', scale=alt.Scale(domain=(10, 45)))
 )
 c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
