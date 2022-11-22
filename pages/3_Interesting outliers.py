@@ -184,10 +184,15 @@ f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
 col16, col17, col18, col19 = st.columns(4)
 
-col16.metric("🔵 FTR in USA")
-col17.metric("🔴 University")
-col18.metric("🔵 FTR in Brazil")
-col19.metric("🔴 University")
+with col16:
+    st.subheader("🔵 FTR in USA")
+with col17:
+    st.subheader("🔴 University")
+with col18:
+    st.subheader("🔵 FTR in Brazil")
+with col19:
+    st.subheader("🔴 University")
+
 
 st.altair_chart(c | f)
 

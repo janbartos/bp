@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="Interesting outliers headers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/3_Interesting outliers.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_Interesting outliers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,14 +39,7 @@
       <workItem from="1668853337882" duration="9446000" />
       <workItem from="1668970559272" duration="3842000" />
       <workItem from="1669038782573" duration="16304000" />
-      <workItem from="1669137038451" duration="1385000" />
-    </task>
-    <task id="LOCAL-00025" summary="Interesting outliers headers">
-      <created>1669056163362</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1669056163362</updated>
+      <workItem from="1669137038451" duration="1557000" />
     </task>
     <task id="LOCAL-00026" summary="Interesting outliers headers">
       <created>1669056311474</created>
@@ -385,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669138249657</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Interesting outliers headers">
+      <created>1669138438534</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1669138438534</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
