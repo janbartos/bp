@@ -337,9 +337,9 @@ with tab4:
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", round(spearman[1], 5))
 
-    st.subheader('zeměpis')
+    st.subheader('Zeměpis')
 
-    keyword = "Zeměpis"
+    keyword = "zeměpis"
 
     df_stats["Data"] = df_transposed[keyword].values
 
