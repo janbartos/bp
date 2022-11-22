@@ -218,6 +218,7 @@ with tab2:
             y="Enrollment:Q",
             tooltip=['Enrollment', 'Time']
         )
+    st.subheader('University enrollment in USA')
     st.altair_chart(bar_chart, use_container_width=True)
 
 with tab3:

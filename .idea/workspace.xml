@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="Interesting outliers headers" />
+    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="Interesting outliers headers">
+      <change beforePath="$PROJECT_DIR$/pages/3_Interesting outliers.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_Interesting outliers.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,14 +39,7 @@
       <workItem from="1668853337882" duration="9446000" />
       <workItem from="1668970559272" duration="3842000" />
       <workItem from="1669038782573" duration="16304000" />
-      <workItem from="1669137038451" duration="7758000" />
-    </task>
-    <task id="LOCAL-00047" summary="Interesting outliers headers">
-      <created>1669065850063</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1669065850063</updated>
+      <workItem from="1669137038451" duration="7949000" />
     </task>
     <task id="LOCAL-00048" summary="Interesting outliers headers">
       <created>1669065868310</created>
@@ -382,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669149074212</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Interesting outliers headers">
+      <created>1669149195687</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1669149195687</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
