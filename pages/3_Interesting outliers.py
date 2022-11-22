@@ -221,10 +221,53 @@ with tab2:
     st.subheader('University enrollment in USA')
     st.altair_chart(bar_chart, use_container_width=True)
 
+#https://educationdata.org/college-enrollment-statistics
 with tab3:
     st.header('Consumerism in USA')
 
-#https://educationdata.org/college-enrollment-statistics
+    df_import_us = pd.read_csv("save2/df_data_groupby_us.csv")
+
+    df_fertility = pd.read_csv("fr.csv")
+
+    df_import_us = df_import_us.drop(['2021'], axis=1)
+
+    df_import_us = df_import_us.set_index("Cathegory").T
+
+    df_fert_us = df_fertility[df_fertility.LOCATION == "USA"]['Value'].values[:17]
+
+    time = np.arange(2004, 2021)
+
+    df_uni_us = pd.DataFrame()
+    df_uni_us["Consumerism"] = df_import_us["Consumerism"].values
+    df_uni_us["FTR"] = df_fert_us
+    df_uni_us["Time"] = time
+
+
+    st.subheader('Consumerism category in USA')
+
+
+    col1, col2, col3, col4, col5 = st.columns(5)
+    pearson = stats.pearsonr(df_uni_us["University"].values , df_uni_us["FTR"].values )
+    col1.metric("Pearson correlation", round(pearson[0], 4))
+    col2.metric("p-Value", round(pearson[1], 5))
+    col3.metric("Covariance", round(df_uni_us[["University", "FTR"]].cov()["University"].values[1],4))
+    spearman = stats.spearmanr(df_uni_us["University"].values, df_uni_us["FTR"].values)
+    col4.metric("Spearman correlation", round(spearman[0], 4))
+    col5.metric("p-Value", round(spearman[1], 5))
+
+
+    base1 = alt.Chart(df_uni_us, title="🔵 Consumerism  🔴 FTR in USA" ).encode(alt.X('Time'))
+
+    a = base1.mark_line(color='red').encode(
+        alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+    )
+    b = base1.mark_line().encode(
+        alt.Y('Consumerism', scale=alt.Scale(domain=(10, 45)))
+    )
+    c = alt.layer(a, b).resolve_scale(y='independent').interactive()
+
+    st.altair_chart(c)
+
 with tab4:
     st.header('Education in Czechia')
 #Education
