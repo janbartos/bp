@@ -13,7 +13,7 @@ import altair as alt
 st.title("Interesting outliers")
 
 
-tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["Fall of the left movement in Brasil", "Universities in Americas", "Consumerism in USA", "Education in Czechia" ,"How to sleep in USA", "Fall of the left movement in Brasil"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Fall of the left in Brasil", "Universities in Americas", "Consumerism in USA", "Education in Czechia" ,"Sleep deprivation"])
 
 
 with tab1:
@@ -212,15 +212,15 @@ with tab2:
 
     st.altair_chart(c | f, use_container_width=True)
 
-with tab4:
+with tab3:
     st.header('Consumerism in USA')
 
 #https://educationdata.org/college-enrollment-statistics
-with tab5:
+with tab4:
     st.header('Education in Czechia')
 #Education
 #univerzita, zeměpis, chemie, vysoká škola
-with tab6:
+with tab5:
     st.header("How to sleep in USA")
 #slaap netherlands
 #como dorme brasil
