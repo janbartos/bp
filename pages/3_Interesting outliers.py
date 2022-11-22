@@ -182,10 +182,12 @@ f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
 
-col16, col17 = st.columns(2)
+col16, col17, col18, col19 = st.columns(4)
 
-col16.metric( st.subheader('This is a subheader'))
-col17.metric(st.subheader('This is a subheader'))
+col16.metric("🔵 FTR in USA")
+col17.metric("🔴 University")
+col18.metric("🔵 FTR in Brazil")
+col19.metric("🔴 University")
 
 st.altair_chart(c | f)
 
