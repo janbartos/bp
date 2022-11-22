@@ -182,7 +182,7 @@ f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
 
-col16, col17 = st.columns(2)
+col16, col17 = st.columns([3,1])
 
 with col16:
     st.text("🔵 FTR in USA  🔴 University")
