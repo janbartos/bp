@@ -237,26 +237,26 @@ with tab3:
 
     time = np.arange(2004, 2021)
 
-    df_uni_us = pd.DataFrame()
-    df_uni_us["Consumerism"] = df_import_us["Consumerism"].values
-    df_uni_us["FTR"] = df_fert_us
-    df_uni_us["Time"] = time
+    df_con_us = pd.DataFrame()
+    df_con_us["Consumerism"] = df_import_us["Consumerism"].values
+    df_con_us["FTR"] = df_fert_us
+    df_con_us["Time"] = time
 
 
     st.subheader('Consumerism category in USA')
 
 
     col1, col2, col3, col4, col5 = st.columns(5)
-    pearson = stats.pearsonr(df_uni_us["University"].values , df_uni_us["FTR"].values )
+    pearson = stats.pearsonr(df_con_us["Consumerism"].values , df_con_us["FTR"].values )
     col1.metric("Pearson correlation", round(pearson[0], 4))
     col2.metric("p-Value", round(pearson[1], 5))
-    col3.metric("Covariance", round(df_uni_us[["University", "FTR"]].cov()["University"].values[1],4))
-    spearman = stats.spearmanr(df_uni_us["University"].values, df_uni_us["FTR"].values)
+    col3.metric("Covariance", round(df_con_us[["Consumerism", "FTR"]].cov()["University"].values[1],4))
+    spearman = stats.spearmanr(df_con_us["Consumerism"].values, df_con_us["FTR"].values)
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", round(spearman[1], 5))
 
 
-    base1 = alt.Chart(df_uni_us, title="🔵 Consumerism  🔴 FTR in USA" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_con_us, title="🔵 Consumerism  🔴 FTR in USA" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
         alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
