@@ -179,9 +179,12 @@ e = base2.mark_line().transform_calculate(
 f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
 
-
-
-
 st.altair_chart(c | f, use_container_width=True)
 
+st.header('Consumerism in USA')
 
+#https://educationdata.org/college-enrollment-statistics
+
+st.header('Education in Czechia')
+#Education
+#univerzita, zeměpis, chemie, vysoká škola
