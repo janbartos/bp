@@ -339,7 +339,7 @@ with tab4:
 
     st.subheader('zeměpis')
 
-    keyword = "zeměpis"
+    keyword = "Zeměpis"
 
     df_stats["Data"] = df_transposed[keyword].values
 
@@ -352,7 +352,7 @@ with tab4:
     col9.metric("Spearman correlation", round(spearman[0], 4))
     col10.metric("p-Value", round(spearman[1], 5))
 
-    st.subheader("chemie")
+    st.subheader("Chemie")
 
     keyword = "chemie"
     df_stats["Data"] = df_transposed[keyword].values
@@ -365,6 +365,20 @@ with tab4:
     spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
     col14.metric("Spearman correlation", round(spearman[0], 4))
     col15.metric("p-Value", round(spearman[1], 5))
+
+    st.subheader("Vysoká škola")
+
+    keyword = "vysoká škola"
+    df_stats["Data"] = df_transposed[keyword].values
+
+    col16, col17, col18, col19, col20 = st.columns(5)
+    pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
+    col16.metric("Pearson correlation", round(pearson[0], 4))
+    col17.metric("p-Value", round(pearson[1], 5))
+    col18.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
+    spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
+    col19.metric("Spearman correlation", round(spearman[0], 4))
+    col20.metric("p-Value", round(spearman[1], 5))
 
 
 #Education
