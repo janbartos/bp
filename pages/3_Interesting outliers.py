@@ -154,9 +154,9 @@ df_uni_br["Time"] = time
 
 fig, (ax1, ax3) = plt.subplots(1, 2)
 
-lns1 = ax.plot(time, ftr, '-', label='FTR in ' + df_uni_us["FTR"].values)
+lns1 = ax.plot(df_uni_us["Time"].values, df_uni_us["FTR"].values, '-', label='FTR in USA')
 ax2 = ax.twinx()
-lns2 = ax2.plot(df_uni_us["Time"], df_uni_us["University"], '-r', label="University")
+lns2 = ax2.plot(df_uni_us["Time"].values, df_uni_us["University"].values, '-r', label="University")
 
 # added these three lines
 lns = lns1 + lns2
@@ -170,9 +170,9 @@ ax2.set_ylabel(r"Searched")
 
 
 
-lns3 = ax3.plot(time, ftr, '-', label='FTR in ' + df_uni_br["FTR"].values)
+lns3 = ax3.plot(df_uni_br["Time"].values, df_uni_br["FTR"].values,  '-', label='FTR in Brazil')
 ax4 = ax3.twinx()
-lns4 = ax2.plot(df_uni_us["Time"], df_uni_us["University"], '-r', label="University")
+lns4 = ax2.plot(df_uni_br["Time"], df_uni_br["University"], '-r', label="University")
 
 # added these three lines
 lns5 = lns4 + lns3
