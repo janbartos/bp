@@ -179,7 +179,7 @@ ax3 = fig.add_subplot(111)
 
 lns3 = ax3.plot(df_uni_br["Time"].values, df_uni_br["FTR"].values,  '-', label='FTR in Brazil')
 ax4 = ax3.twinx()
-lns4 = ax2.plot(df_uni_br["Time"], df_uni_br["University"], '-r', label="University")
+lns4 = ax4.plot(df_uni_br["Time"], df_uni_br["University"], '-r', label="University")
 
 # added these three lines
 lns5 = lns4 + lns3
