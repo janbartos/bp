@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="Interesting outliers headers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/3_Interesting outliers.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_Interesting outliers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,21 +39,7 @@
       <workItem from="1668853337882" duration="9446000" />
       <workItem from="1668970559272" duration="3842000" />
       <workItem from="1669038782573" duration="16304000" />
-      <workItem from="1669137038451" duration="6288000" />
-    </task>
-    <task id="LOCAL-00041" summary="Interesting outliers headers">
-      <created>1669065233793</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1669065233793</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Interesting outliers headers">
-      <created>1669065366752</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1669065366752</updated>
+      <workItem from="1669137038451" duration="6482000" />
     </task>
     <task id="LOCAL-00043" summary="Interesting outliers headers">
       <created>1669065406928</created>
@@ -385,7 +370,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669144239190</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Interesting outliers headers">
+      <created>1669147602413</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1669147602413</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Interesting outliers headers">
+      <created>1669147665446</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1669147665446</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

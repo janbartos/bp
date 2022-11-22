@@ -152,7 +152,7 @@ df_uni_br["Time"] = time
 
 
 st.subheader('University category in USA')
-keyword = "University"
+
 
 col16, col17, col18, col19, col20 = st.columns(5)
 pearson = stats.pearsonr(df_uni_us["University"].values , df_uni_us["FTR"].values )
@@ -162,6 +162,18 @@ col18.metric("Covariance", round(df_uni_us[["University", "FTR"]].cov()["Univers
 spearman = stats.spearmanr(df_uni_us["University"].values, df_uni_us["FTR"].values)
 col19.metric("Spearman correlation", round(spearman[0], 4))
 col20.metric("p-Value", round(spearman[1], 5))
+
+st.subheader('University category in Brazil')
+
+
+col21, col22, col23, col24, col25 = st.columns(5)
+pearson = stats.pearsonr(df_uni_br["University"].values , df_uni_br["FTR"].values )
+col21.metric("Pearson correlation", round(pearson[0], 4))
+col22.metric("p-Value", round(pearson[1], 5))
+col23.metric("Covariance", round(df_uni_br[["University", "FTR"]].cov()["University"].values[1],4))
+spearman = stats.spearmanr(df_uni_br["University"].values, df_uni_br["FTR"].values)
+col24.metric("Spearman correlation", round(spearman[0], 4))
+col25.metric("p-Value", round(spearman[1], 5))
 
 
 
