@@ -151,6 +151,20 @@ df_uni_br["Time"] = time
 
 
 
+st.subheader('University category in USA')
+keyword = "University"
+
+col16, col17, col18, col19, col20 = st.columns(5)
+pearson = stats.pearsonr(df_uni_us["University"].values , df_uni_us["FTR"].values )
+col16.metric("Pearson correlation", round(pearson[0], 4))
+col17.metric("p-Value", round(pearson[1], 5))
+col18.metric("Covariance", round(df_uni_us["University", "FTR"].cov()["University"].values[1],4))
+spearman = stats.spearmanr(df_uni_us["University"].values, df_uni_us["FTR"].values)
+col19.metric("Spearman correlation", round(spearman[0], 4))
+col20.metric("p-Value", round(spearman[1], 5))
+
+
+
 
 base1 = alt.Chart(df_uni_us, title="🔵 University  🔴 FTR in USA" ).encode(alt.X('Time'))
 
@@ -189,4 +203,6 @@ st.header('Education in Czechia')
 #Education
 #univerzita, zeměpis, chemie, vysoká škola
 
-st.header("How to sleep ")
+st.header("How to sleep in USA")
+#slaap netherlands
+#como dorme brasil
