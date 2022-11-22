@@ -152,7 +152,7 @@ df_uni_br["Time"] = time
 
 
 
-base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
+base1 = alt.Chart(df_uni_us, title="🔵 University  🔴 FTR in USA" ).encode(alt.X('Time'))
 
 a = base1.mark_line(color='red').encode(
     alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
@@ -162,7 +162,7 @@ b = base1.mark_line().encode(
 )
 c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
-base2 = alt.Chart(df_uni_br).encode(alt.X('Time'))
+base2 = alt.Chart(df_uni_br, title= "🔵 University  🔴 FTR in USA").encode(alt.X('Time'))
 
 
 d = base2.mark_line(color='red').transform_calculate(
@@ -185,9 +185,9 @@ f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 col16, col17 = st.columns(2)
 
 with col16:
-    st.text("🔵 FTR in USA  🔴 University")
+    st.text("🔵 University  🔴 FTR in USA")
 with col17:
-    st.text("🔵 FTR in Brazil 🔴 University")
+    st.text("🔵 University  🔴 FTR in Brazil")
 
 
 
