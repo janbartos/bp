@@ -151,50 +151,6 @@ df_uni_br["Time"] = time
 
 
 
-
-
-fig = plt.figure()
-ax = fig.add_subplot(111)
-
-lns1 = ax.plot(df_uni_us["Time"].values, df_uni_us["FTR"].values, '-', label='FTR in USA')
-ax2 = ax.twinx()
-lns2 = ax2.plot(df_uni_us["Time"].values, df_uni_us["University"].values, '-r', label="University")
-
-# added these three lines
-lns = lns1 + lns2
-labs = [l.get_label() for l in lns]
-ax.legend(lns, labs, loc=0)
-
-ax.grid()
-ax.set_xlabel("Years")
-ax.set_ylabel(r"Fertility")
-ax2.set_ylabel(r"Searched")
-
-st.pyplot(fig)
-
-fig1 = plt.figure()
-ax3 = fig.add_subplot(111)
-
-
-
-lns3 = ax3.plot(df_uni_br["Time"].values, df_uni_br["FTR"].values,  '-', label='FTR in Brazil')
-ax4 = ax3.twinx()
-lns4 = ax4.plot(df_uni_br["Time"], df_uni_br["University"], '-r', label="University")
-
-# added these three lines
-lns5 = lns4 + lns3
-labs1 = [l.get_label() for l in lns5]
-ax3.legend(lns5, labs1, loc=0)
-
-ax3.grid()
-ax3.set_xlabel("Years")
-ax3.set_ylabel(r"Fertility")
-ax4.set_ylabel(r"Searched")
-
-
-st.pyplot(fig1)
-
-
 st.dataframe(df_uni_br)
 base1 = alt.Chart(df_uni_us).encode(alt.X('Time'))
 
@@ -225,6 +181,11 @@ f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
 
 #chart2 = alt.Chart(df_uni_br).mark_line()
+
+col16, col17 = st.columns(2)
+
+col16.metric( st.subheader('This is a subheader'))
+col17.metric(st.subheader('This is a subheader'))
 
 st.altair_chart(c | f)
 
