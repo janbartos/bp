@@ -196,21 +196,29 @@ with tab2:
     base2 = alt.Chart(df_uni_br, title= "🔵 University  🔴 FTR in Brazil").encode(alt.X('Time'))
 
 
-    d = base2.mark_line(color='red').transform_calculate(
-        color='"meaffsure_max"'
-    ).encode(
+    d = base2.mark_line(color='red').encode(
         alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
     )
-    e = base2.mark_line().transform_calculate(
-        color='"meaffsufre_max"'
-    ).encode(
+    e = base2.mark_line().encode(
         alt.Y('University', scale=alt.Scale(domain=(4, 18)))
     )
 
     f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
-
     st.altair_chart(c | f, use_container_width=True)
+
+    school_usa_enrollment = pd.DataFrame({
+
+         "Enrollment": [17272044, 17487475, 17754230, 18258138, 19081686, 20313594, 21019438, 21010590,	20644478, 20376677, 20209092, 19988204, 19846904, 19778151, 19651412, 18991798],
+         "Time":  [2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+    })
+
+    bar_chart = alt.Chart(school_usa_enrollment).mark_bar().encode(
+            x="Time:O",
+            y="Enrollment:Q",
+            tooltip=['Enrollment', 'Time']
+        )
+    st.altair_chart(bar_chart, use_container_width=True)
 
 with tab3:
     st.header('Consumerism in USA')
