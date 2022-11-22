@@ -285,7 +285,7 @@ with tab4:
 
     df_edu_cz = pd.DataFrame()
     df_edu_cz["Education"] = df_import_cz["Education"].values
-    df_edu_cz["FTR"] = df_fert_cz.values
+    df_edu_cz["FTR"] = df_fert_cz
     df_edu_cz["Time"] = time
 
 
