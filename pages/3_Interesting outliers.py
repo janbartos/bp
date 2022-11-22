@@ -152,7 +152,9 @@ df_uni_br["Time"] = time
 
 
 
-fig, (ax1, ax3) = plt.subplots(1, 2)
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
 
 lns1 = ax.plot(df_uni_us["Time"].values, df_uni_us["FTR"].values, '-', label='FTR in USA')
 ax2 = ax.twinx()
@@ -167,6 +169,11 @@ ax.grid()
 ax.set_xlabel("Years")
 ax.set_ylabel(r"Fertility")
 ax2.set_ylabel(r"Searched")
+
+st.pyplot(fig)
+
+fig1 = plt.figure()
+ax3 = fig.add_subplot(111)
 
 
 
@@ -185,7 +192,7 @@ ax3.set_ylabel(r"Fertility")
 ax4.set_ylabel(r"Searched")
 
 
-st.pyplot(fig)
+st.pyplot(fig1)
 
 
 st.dataframe(df_uni_br)
