@@ -189,7 +189,7 @@ with col16:
 with col17:
     st.text("🔴 University")
 with col18:
-    st.text(" ")
+    st.text("             ")
 with col19:
     st.text("🔵 FTR in Brazil")
 with col20:
