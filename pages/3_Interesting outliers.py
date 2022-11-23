@@ -416,7 +416,7 @@ with tab5:
     df_fert_nl = df_fertility[df_fertility.LOCATION == "NLA"]['Value'].values[:17]
     df_fert_us = df_fertility[df_fertility.LOCATION == "USA"]['Value'].values[:17]
 
-    keyword_br = "Como dorme"
+    keyword_br = "como dormir"
 
     df_stats_br = pd.DataFrame()
     df_stats_br["Data"] = df_import_br[keyword_br].values
@@ -437,7 +437,7 @@ with tab5:
 
 
 
-    keyword_nl = "slaap"
+    keyword_nl = "slaaptekort"
 
     df_stats_nl = pd.DataFrame()
     df_stats_nl["Data"] = df_import_nl[keyword_nl].values
@@ -458,7 +458,7 @@ with tab5:
     col9.metric("Spearman correlation", round(spearman[0], 4))
     col10.metric("p-Value", round(spearman[1], 5))
 
-    keyword_us = "How to sleep"
+    keyword_us = "how to sleep"
 
     df_stats_us = pd.DataFrame()
     df_stats_us["Data"] = df_import_us[keyword_us].values
