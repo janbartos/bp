@@ -512,7 +512,7 @@ with tab5:
 
     j = alt.layer(g, i).resolve_scale(y='independent').interactive()
 
-    st.altair_chart(c | f, use_container_width=True)
+    st.altair_chart(c | f)
     st.altair_chart(j)
 
 
