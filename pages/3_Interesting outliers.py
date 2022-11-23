@@ -9,6 +9,8 @@ from scipy.optimize import curve_fit
 from math import exp
 import altair as alt
 
+def func1(x, a, b, c):
+    return a*x**2+b*x+c
 
 st.title("Interesting outliers")
 
@@ -380,10 +382,99 @@ with tab4:
     col19.metric("Spearman correlation", round(spearman[0], 4))
     col20.metric("p-Value", round(spearman[1], 5))
 
+    ftr = df_fert
+    y1 = df_transposed["vysoká škola"].values
+    y2 = df_transposed["chemie"].values
+    y3 = df_transposed["zeměpis"].values
+    y4 = df_transposed["Univerzita"].values
+
+
 
 #Education
 #univerzita, zeměpis, chemie, vysoká škola
 with tab5:
     st.header("How to sleep in USA")
+
+
+    df_fertility = pd.read_csv("fr.csv")
+
+    df_import_br = pd.read_csv("df_data_br.csv")
+    df_import_nl = pd.read_csv("df_data_nl.csv")
+    df_import_us = pd.read_csv("df_data_us.csv")
+
+
+    df_import_br = df_import_br.drop(['2021'], axis=1)
+    df_import_nl = df_import_nl.drop(['2021'], axis=1)
+    df_import_us = df_import_us.drop(['2021'], axis=1)
+
+    df_import_br = df_import_br.set_index("keyword").T
+    df_import_nl = df_import_nl.set_index("keyword").T
+    df_import_us = df_import_us.set_index("keyword").T
+
+
+    df_fert_br = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
+    df_fert_nl = df_fertility[df_fertility.LOCATION == "NLA"]['Value'].values[:17]
+    df_fert_us = df_fertility[df_fertility.LOCATION == "USA"]['Value'].values[:17]
+
+    keyword_br = "Como dorme"
+
+    df_stats_br = pd.DataFrame()
+    df_stats_br["Data"] = df_import_br[keyword_br].values
+    df_stats_br["FTR"] = df_fert_br
+
+    st.subheader(keyword_br)
+    keyword = keyword_br
+
+    col1, col2, col3, col4, col5 = st.columns(5)
+    pearson = stats.pearsonr(df_import_br[keyword].values, df_fert_br)
+    col1.metric("Pearson correlation", round(pearson[0], 4))
+    col2.metric("p-Value", round(pearson[1], 5))
+    col3.metric("Covariance", round(df_stats_br[["Data", "FTR"]].cov()["Data"].values[1], 4))
+    spearman = stats.spearmanr(df_import_br[keyword].values, df_fert_br)
+    col4.metric("Spearman correlation", round(spearman[0], 4))
+    col5.metric("p-Value", round(spearman[1], 5))
+
+
+
+    keyword_nl = "slaap"
+
+    df_stats_nl = pd.DataFrame()
+    df_stats_nl["Data"] = df_import_nl[keyword_nl].values
+    df_stats_nl["FTR"] = df_fert_nl
+
+
+    st.subheader(keyword_nl)
+
+    keyword = keyword_nl
+
+    col6, col7, col8, col9, col10 = st.columns(5)
+    pearson = stats.pearsonr(df_fert_nl[keyword].values, df_fert_nl)
+    col6.metric("Pearson correlation", round(pearson[0], 4))
+    col7.metric("p-Value", round(pearson[1], 5))
+    col8.metric("Covariance", round(df_stats_nl[["Data", "FTR"]].cov()["Data"].values[1], 4))
+    spearman = stats.spearmanr(df_fert_nl[keyword].values, df_fert_nl)
+    col9.metric("Spearman correlation", round(spearman[0], 4))
+    col10.metric("p-Value", round(spearman[1], 5))
+
+    keyword_us = "How to sleep"
+
+    df_stats_us = pd.DataFrame()
+    df_stats_us["Data"] = df_import_us[keyword_us].values
+    df_stats_us["FTR"] = df_fert_us
+
+    st.subheader(keyword_us)
+
+    keyword = keyword_us
+
+
+    col11, col12, col13, col14, col15 = st.columns(5)
+    pearson = stats.pearsonr(df_import_us[keyword].values, df_fert_us)
+    col11.metric("Pearson correlation", round(pearson[0], 4))
+    col12.metric("p-Value", round(pearson[1], 5))
+    col13.metric("Covariance", round(df_stats_us[["Data", "FTR"]].cov()["Data"].values[1], 4))
+    spearman = stats.spearmanr(df_import_us[keyword].values, df_fert_us)
+    col14.metric("Spearman correlation", round(spearman[0], 4))
+    col15.metric("p-Value", round(spearman[1], 5))
+
 #slaap netherlands
 #como dorme brasil
