@@ -421,6 +421,7 @@ with tab5:
     df_stats_br = pd.DataFrame()
     df_stats_br["Data"] = df_import_br[keyword_br].values
     df_stats_br["FTR"] = df_fert_br
+    df_stats_br["Time"] = range(2004, 2021)
 
     st.subheader(keyword_br)
     keyword = keyword_br
@@ -441,6 +442,7 @@ with tab5:
     df_stats_nl = pd.DataFrame()
     df_stats_nl["Data"] = df_import_nl[keyword_nl].values
     df_stats_nl["FTR"] = df_fert_nl
+    df_stats_nl["Time"] = range(2004, 2021)
 
 
     st.subheader(keyword_nl)
@@ -461,6 +463,7 @@ with tab5:
     df_stats_us = pd.DataFrame()
     df_stats_us["Data"] = df_import_us[keyword_us].values
     df_stats_us["FTR"] = df_fert_us
+    df_stats_us["Time"] = range(2004, 2021)
 
     st.subheader(keyword_us)
 
@@ -475,6 +478,41 @@ with tab5:
     spearman = stats.spearmanr(df_import_us[keyword].values, df_fert_us)
     col14.metric("Spearman correlation", round(spearman[0], 4))
     col15.metric("p-Value", round(spearman[1], 5))
+
+    base1 = alt.Chart(df_stats_us, title="🔵 University  🔴 FTR in USA" ).encode(alt.X('Time'))
+
+    a = base1.mark_line(color='red').encode(
+        alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+    )
+    b = base1.mark_line().encode(
+        alt.Y('Data', scale=alt.Scale(domain=(10, 45)))
+    )
+    c = alt.layer(a, b).resolve_scale(y='independent').interactive()
+
+    base2 = alt.Chart(df_stats_br, title= "🔵 University  🔴 FTR in Brazil").encode(alt.X('Time'))
+
+
+    d = base2.mark_line(color='red').encode(
+        alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
+    )
+    e = base2.mark_line().encode(
+        alt.Y('Data', scale=alt.Scale(domain=(4, 18)))
+    )
+
+    f = alt.layer(d, e).resolve_scale(y='independent').interactive()
+
+    base3 = alt.Chart(df_stats_nl, title="🔵 University  🔴 FTR in USA").encode(alt.X('Time'))
+
+    g = base3.mark_line(color='red').encode(
+        alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
+    )
+    i = base3.mark_line().encode(
+        alt.Y('Data', scale=alt.Scale(domain=(4, 18)))
+    )
+
+    j = alt.layer(g, i).resolve_scale(y='independent').interactive()
+
+    st.altair_chart(c | f | j, use_container_width=True)
 
 #slaap netherlands
 #como dorme brasil
