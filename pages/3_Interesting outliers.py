@@ -479,7 +479,7 @@ with tab5:
     col14.metric("Spearman correlation", round(spearman[0], 4))
     col15.metric("p-Value", round(spearman[1], 5))
 
-    base1 = alt.Chart(df_stats_us, title="🔵 University  🔴 FTR in USA" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_stats_us, title="🔵 How to sleep  🔴 FTR in USA" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
         alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
@@ -489,7 +489,7 @@ with tab5:
     )
     c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
-    base2 = alt.Chart(df_stats_br, title= "🔵 University  🔴 FTR in Brazil").encode(alt.X('Time'))
+    base2 = alt.Chart(df_stats_br, title= "🔵 Como dormir  🔴 FTR in Brazil").encode(alt.X('Time'))
 
 
     d = base2.mark_line(color='red').encode(
@@ -501,7 +501,7 @@ with tab5:
 
     f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
-    base3 = alt.Chart(df_stats_nl, title="🔵 University  🔴 FTR in USA").encode(alt.X('Time'))
+    base3 = alt.Chart(df_stats_nl, title="🔵 slaaptekort  🔴 FTR in Netherlands").encode(alt.X('Time'))
 
     g = base3.mark_line(color='red').encode(
         alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
@@ -513,7 +513,7 @@ with tab5:
     j = alt.layer(g, i).resolve_scale(y='independent').interactive()
 
     st.altair_chart(c | f, use_container_width=True)
-    st.altair_chart(j, use_container_width=True)
+    st.altair_chart(j)
 
 
 #slaap netherlands
