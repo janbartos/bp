@@ -413,7 +413,7 @@ with tab5:
 
 
     df_fert_br = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
-    df_fert_nl = df_fertility[df_fertility.LOCATION == "NLA"]['Value'].values[:17]
+    df_fert_nl = df_fertility[df_fertility.LOCATION == "NLD"]['Value'].values[:17]
     df_fert_us = df_fertility[df_fertility.LOCATION == "USA"]['Value'].values[:17]
 
     keyword_br = "como dormir"
