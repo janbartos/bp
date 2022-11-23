@@ -451,11 +451,11 @@ with tab5:
     keyword = keyword_nl
 
     col6, col7, col8, col9, col10 = st.columns(5)
-    pearson = stats.pearsonr(df_import_br[keyword_nl].values, df_fert_nl)
+    pearson = stats.pearsonr(df_import_nl[keyword_nl].values, df_fert_nl)
     col6.metric("Pearson correlation", round(pearson[0], 4))
     col7.metric("p-Value", round(pearson[1], 5))
     col8.metric("Covariance", round(df_stats_nl[["Data", "FTR"]].cov()["Data"].values[1], 4))
-    spearman = stats.spearmanr(df_import_br[keyword_nl].values, df_fert_nl)
+    spearman = stats.spearmanr(df_import_nl[keyword_nl].values, df_fert_nl)
     col9.metric("Spearman correlation", round(spearman[0], 4))
     col10.metric("p-Value", round(spearman[1], 5))
 
