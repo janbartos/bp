@@ -444,7 +444,6 @@ with tab5:
     df_stats_nl["FTR"] = df_fert_nl
     df_stats_nl["Time"] = range(2004, 2021)
 
-    st.dataframe(df_stats_nl)
 
     st.subheader(keyword_nl)
 
@@ -513,7 +512,9 @@ with tab5:
 
     j = alt.layer(g, i).resolve_scale(y='independent').interactive()
 
-    st.altair_chart(c | f | j, use_container_width=True)
+    st.altair_chart(c | f, use_container_width=True)
+    st.altair_chart(j, use_container_width=True)
+
 
 #slaap netherlands
 #como dorme brasil
