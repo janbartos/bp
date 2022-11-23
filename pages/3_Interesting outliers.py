@@ -444,17 +444,18 @@ with tab5:
     df_stats_nl["FTR"] = df_fert_nl
     df_stats_nl["Time"] = range(2004, 2021)
 
+    st.dataframe(df_stats_nl)
 
     st.subheader(keyword_nl)
 
     keyword = keyword_nl
 
     col6, col7, col8, col9, col10 = st.columns(5)
-    pearson = stats.pearsonr(df_fert_nl[keyword].values, df_fert_nl)
+    pearson = stats.pearsonr(df_fert_nl[keyword_nl].values, df_fert_nl)
     col6.metric("Pearson correlation", round(pearson[0], 4))
     col7.metric("p-Value", round(pearson[1], 5))
     col8.metric("Covariance", round(df_stats_nl[["Data", "FTR"]].cov()["Data"].values[1], 4))
-    spearman = stats.spearmanr(df_fert_nl[keyword].values, df_fert_nl)
+    spearman = stats.spearmanr(df_fert_nl[keyword_nl].values, df_fert_nl)
     col9.metric("Spearman correlation", round(spearman[0], 4))
     col10.metric("p-Value", round(spearman[1], 5))
 
