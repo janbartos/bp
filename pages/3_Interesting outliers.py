@@ -12,7 +12,7 @@ import altair as alt
 def func1(x, a, b, c):
     return a*x**2+b*x+c
 
-st.title("Interesting outliers")
+st.title("Interesting data")
 
 
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Fall of the left in Brasil", "Universities in Americas", "Consumerism in USA", "Education in Czechia" ,"Sleep deprivation"])

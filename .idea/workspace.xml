@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="Interesting outliers headers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/3_Interesting outliers.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_Interesting outliers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,14 +41,8 @@
       <workItem from="1669038782573" duration="16304000" />
       <workItem from="1669137038451" duration="10788000" />
       <workItem from="1669216919163" duration="1232000" />
-      <workItem from="1669238945175" duration="1048000" />
-    </task>
-    <task id="LOCAL-00067" summary="Interesting outliers headers">
-      <created>1669068023022</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1669068023022</updated>
+      <workItem from="1669238945175" duration="1160000" />
+      <workItem from="1669371915730" duration="1120000" />
     </task>
     <task id="LOCAL-00068" summary="Interesting outliers headers">
       <created>1669137535455</created>
@@ -387,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669239931517</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Interesting outliers headers">
+      <created>1669240012015</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1669240012015</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
