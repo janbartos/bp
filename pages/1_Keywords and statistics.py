@@ -149,8 +149,8 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     ax3.plot(key_data, ftr, 'ro', label = 'original data')
     ax3.legend(["FTR in " + country, str(keyword)])
     ax3.grid()
-    ax3.set_xlabel(r"Fertility rate")
-    ax3.set_ylabel(r"Searched")
+    ax3.set_xlabel(r"Searched")
+    ax3.set_ylabel(r"Fertility rate")
 
     st.pyplot(fig2)
 
