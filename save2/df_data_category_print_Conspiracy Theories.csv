@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Conspiracy Theories,50,0.5132,3.51E-02,0.128,-0.0902,7.31E-01
+cz,Conspiracy Theories,43,-0.8397,2.48E-05,-0.4052,-0.9133,3.08E-07
+us,Conspiracy Theories,65,-0.4249,8.91E-02,-0.0875,-0.3961,1.16E-01
+de,Conspiracy Theories,45,-0.0174,9.47E-01,-0.0031,0.043,8.70E-01
+es,Conspiracy Theories,52,-0.4532,6.77E-02,-0.0405,-0.5621,1.88E-02
+nl,Conspiracy Theories,45,0.0348,8.95E-01,0.0055,-0.091,7.28E-01
+fr,Conspiracy Theories,47,-0.2854,2.67E-01,-0.0431,-0.4499,7.00E-02

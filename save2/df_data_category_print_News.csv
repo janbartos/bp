@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,News,56,0.9319,5.32E-08,0.2398,0.9141,2.88E-07
+cz,News,52,-0.8717,5.15E-06,-0.2094,-0.7621,3.76E-04
+us,News,65,0.4684,5.79E-02,0.2067,0.4464,7.25E-02
+de,News,65,-0.0185,9.44E-01,-0.0034,0.0479,8.55E-01
+es,News,60,-0.4983,4.18E-02,-0.0393,-0.631,6.60E-03
+nl,News,54,-0.0022,9.93E-01,-0.0003,-0.1242,6.35E-01
+fr,News,59,0.1213,6.43E-01,0.0272,0.2213,3.93E-01

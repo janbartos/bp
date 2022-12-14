@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Sports,14,0.6136,8.80E-03,0.143,0.2945,2.51E-01
+cz,Sports,14,0.4496,7.02E-02,0.115,0.4561,6.58E-02
+us,Sports,14,-0.7895,1.64E-04,-0.4532,-0.7958,1.33E-04
+de,Sports,14,0.8085,8.56E-05,0.1768,0.825,4.57E-05
+es,Sports,14,-0.6494,4.79E-03,-0.0624,-0.6138,8.77E-03
+nl,Sports,14,-0.0421,8.73E-01,-0.0048,-0.1931,4.58E-01
+fr,Sports,14,-0.2984,2.45E-01,-0.0372,-0.3503,1.68E-01

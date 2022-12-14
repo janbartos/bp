@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Jobs,11,0.9207,1.62E-07,0.2648,0.9399,2.14E-08
+cz,Jobs,6,-0.8572,1.10E-05,-0.3394,-0.8298,3.78E-05
+us,Jobs,12,-0.881,3.01E-06,-0.5529,-0.8853,2.31E-06
+de,Jobs,10,-0.2012,4.39E-01,-0.0635,-0.1215,6.42E-01
+es,Jobs,11,-0.2502,3.33E-01,-0.041,-0.4945,4.36E-02
+nl,Jobs,11,-0.3879,1.24E-01,-0.1066,-0.4539,6.72E-02
+fr,Jobs,8,0.0379,8.85E-01,0.0077,0.0578,8.26E-01

@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Environmentalism,12,0.7467,5.74E-04,0.2981,0.2859,2.66E-01
+cz,Environmentalism,10,0.3004,2.41E-01,0.0619,0.2876,2.63E-01
+us,Environmentalism,14,0.3975,1.14E-01,0.2047,0.4427,7.52E-02
+de,Environmentalism,13,-0.0505,8.47E-01,-0.009,-0.1461,5.76E-01
+es,Environmentalism,12,-0.0508,8.47E-01,-0.0108,-0.0831,7.51E-01
+nl,Environmentalism,10,-0.6722,3.12E-03,-0.1017,-0.5609,1.92E-02
+fr,Environmentalism,12,0.0735,7.79E-01,0.0188,0.1328,6.11E-01

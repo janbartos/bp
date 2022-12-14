@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Steroids,16,-0.36,1.56E-01,-0.0784,-0.4217,9.18E-02
+cz,Steroids,10,-0.7144,1.27E-03,-0.2629,-0.6724,3.10E-03
+us,Steroids,19,0.4234,9.04E-02,0.1409,0.5064,3.80E-02
+de,Steroids,14,-0.6968,1.88E-03,-0.1525,-0.6335,6.33E-03
+es,Steroids,11,-0.0577,8.26E-01,-0.0094,0.0246,9.25E-01
+nl,Steroids,10,-0.7654,3.43E-04,-0.1856,-0.8057,9.47E-05
+fr,Steroids,9,-0.4645,6.03E-02,-0.0785,-0.6494,4.78E-03

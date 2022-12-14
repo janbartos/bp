@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Guns,16,-0.0271,9.18E-01,-0.0068,-0.3939,1.18E-01
+cz,Guns,15,-0.6526,4.51E-03,-0.2418,-0.4401,7.71E-02
+us,Guns,16,-0.8101,8.08E-05,-0.7198,-0.7811,2.14E-04
+de,Guns,17,0.6048,1.01E-02,0.1498,0.6028,1.04E-02
+es,Guns,16,-0.3753,1.38E-01,-0.0427,-0.5141,3.47E-02
+nl,Guns,13,0.1116,6.70E-01,0.0152,-0.0541,8.37E-01
+fr,Guns,16,-0.6858,2.37E-03,-0.1273,-0.7707,2.93E-04

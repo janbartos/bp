@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Legal Drugs,28,0.1411,5.89E-01,0.0358,-0.3337,1.90E-01
+cz,Legal Drugs,29,0.6649,3.59E-03,0.4019,0.6921,2.08E-03
+us,Legal Drugs,32,-0.9778,1.37E-11,-0.8353,-0.9552,2.45E-09
+de,Legal Drugs,30,0.8881,1.94E-06,0.3883,0.8226,5.04E-05
+es,Legal Drugs,30,-0.6821,2.56E-03,-0.1678,-0.6999,1.76E-03
+nl,Legal Drugs,30,-0.9196,1.79E-07,-0.448,-0.8352,3.02E-05
+fr,Legal Drugs,28,-0.8701,5.62E-06,-0.2434,-0.874,4.53E-06

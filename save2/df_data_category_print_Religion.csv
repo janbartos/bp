@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Religion,35,0.7272,9.40E-04,0.1979,0.1166,6.56E-01
+cz,Religion,34,-0.8802,3.16E-06,-0.356,-0.8924,1.46E-06
+us,Religion,37,0.0192,9.42E-01,0.0057,-0.0822,7.54E-01
+de,Religion,35,0.4345,8.14E-02,0.0818,0.3941,1.18E-01
+es,Religion,36,-0.4275,8.69E-02,-0.0469,-0.5621,1.88E-02
+nl,Religion,33,-0.5685,1.73E-02,-0.0688,-0.6277,6.98E-03
+fr,Religion,35,-0.725,9.91E-04,-0.1922,-0.7425,6.41E-04

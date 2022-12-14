@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Consumerism,22,-0.6912,2.12E-03,-0.2959,-0.5963,1.15E-02
+cz,Consumerism,20,0.9205,1.64E-07,1.0272,0.906,5.55E-07
+us,Consumerism,22,-0.9496,5.87E-09,-1.2041,-0.943,1.45E-08
+de,Consumerism,21,0.7157,1.24E-03,0.3325,0.7281,9.21E-04
+es,Consumerism,20,-0.3243,2.04E-01,-0.1097,-0.2718,2.91E-01
+nl,Consumerism,20,-0.5972,1.14E-02,-0.3202,-0.7159,1.23E-03
+fr,Consumerism,18,-0.7997,1.17E-04,-0.3256,-0.6773,2.82E-03

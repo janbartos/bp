@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Marriage,5,0.8826,2.73E-06,0.3473,0.5595,1.95E-02
+cz,Marriage,2,-0.1553,5.52E-01,-0.0609,-0.1636,5.30E-01
+us,Marriage,6,-0.7056,1.55E-03,-0.1691,-0.6769,2.84E-03
+de,Marriage,5,0.05,8.49E-01,0.0172,0.1105,6.73E-01
+es,Marriage,4,-0.2613,3.11E-01,-0.0407,-0.4123,1.00E-01
+nl,Marriage,3,0.6141,8.73E-03,0.2894,0.7848,1.91E-04
+fr,Marriage,3,-0.1223,6.40E-01,-0.0265,-0.086,7.43E-01

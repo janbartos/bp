@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Ideology,30,0.8642,7.72E-06,0.3947,0.4479,7.14E-02
+cz,Ideology,24,-0.797,1.28E-04,-0.4126,-0.788,1.72E-04
+us,Ideology,33,-0.0686,7.94E-01,-0.0325,-0.3004,2.41E-01
+de,Ideology,29,-0.2212,3.94E-01,-0.0687,-0.2014,4.38E-01
+es,Ideology,26,0.1195,6.48E-01,0.0249,0.3715,1.42E-01
+nl,Ideology,25,0.2986,2.44E-01,0.086,0.5474,2.30E-02
+fr,Ideology,29,-0.3013,2.40E-01,-0.0955,-0.6466,5.03E-03

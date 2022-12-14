@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Gambling,16,-0.1503,5.65E-01,-0.0415,-0.1485,5.70E-01
+cz,Gambling,15,0.7716,2.86E-04,0.4859,0.7535,4.78E-04
+us,Gambling,17,-0.3057,2.33E-01,-0.1268,-0.3262,2.01E-01
+de,Gambling,14,0.7878,1.74E-04,0.4189,0.7551,4.58E-04
+es,Gambling,16,-0.5568,2.02E-02,-0.1347,-0.5486,2.26E-02
+nl,Gambling,15,-0.9066,5.29E-07,-0.4731,-0.8696,5.77E-06
+fr,Gambling,17,-0.4953,4.32E-02,-0.0738,-0.4302,8.47E-02

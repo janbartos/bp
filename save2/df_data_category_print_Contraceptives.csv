@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Contraceptives,9,0.673,3.07E-03,0.2214,-0.0245,9.26E-01
+cz,Contraceptives,8,-0.6178,8.23E-03,-0.2702,-0.4438,7.44E-02
+us,Contraceptives,10,-0.6874,2.30E-03,-0.5923,-0.5395,2.54E-02
+de,Contraceptives,8,0.4933,4.42E-02,0.1439,0.5623,1.88E-02
+es,Contraceptives,9,-0.6412,5.54E-03,-0.1169,-0.6212,7.78E-03
+nl,Contraceptives,8,-0.3985,1.13E-01,-0.081,-0.3063,2.32E-01
+fr,Contraceptives,9,-0.2047,4.31E-01,-0.0292,-0.1512,5.62E-01

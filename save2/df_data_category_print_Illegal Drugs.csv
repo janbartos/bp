@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Illegal Drugs,25,0.3794,1.33E-01,0.1577,-0.081,7.57E-01
+cz,Illegal Drugs,22,-0.2716,2.92E-01,-0.1146,-0.0111,9.66E-01
+us,Illegal Drugs,29,-0.8394,2.52E-05,-0.8145,-0.9013,7.88E-07
+de,Illegal Drugs,28,0.9179,2.08E-07,0.7218,0.841,2.34E-05
+es,Illegal Drugs,28,-0.6667,3.47E-03,-0.1906,-0.6691,3.31E-03
+nl,Illegal Drugs,25,-0.9662,3.11E-10,-0.385,-0.9619,7.51E-10
+fr,Illegal Drugs,26,-0.9081,4.70E-07,-0.3563,-0.8961,1.14E-06

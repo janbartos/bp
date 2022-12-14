@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Entertainment,209,0.1196,6.48E-01,0.0139,-0.0233,9.29E-01
+cz,Entertainment,279,-0.756,4.46E-04,-0.2444,-0.7744,2.63E-04
+us,Entertainment,297,-0.2911,2.57E-01,-0.0483,-0.3397,1.82E-01
+de,Entertainment,220,0.526,3.01E-02,0.0646,0.4948,4.35E-02
+es,Entertainment,254,-0.4351,8.09E-02,-0.0256,-0.5818,1.43E-02
+nl,Entertainment,253,0.149,5.68E-01,0.0132,0.0185,9.44E-01
+fr,Entertainment,242,-0.2016,4.38E-01,-0.0189,-0.22,3.96E-01

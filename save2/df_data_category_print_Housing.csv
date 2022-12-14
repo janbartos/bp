@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Housing,13,-0.5839,1.39E-02,-0.1633,-0.7288,9.04E-04
+cz,Housing,8,0.8041,1.00E-04,0.4351,0.7634,3.63E-04
+us,Housing,17,-0.7603,3.96E-04,-0.3465,-0.7836,1.98E-04
+de,Housing,12,-0.8983,9.76E-07,-0.4653,-0.8034,1.02E-04
+es,Housing,16,-0.289,2.61E-01,-0.0523,-0.337,1.86E-01
+nl,Housing,10,-0.6393,5.73E-03,-0.1368,-0.6937,2.01E-03
+fr,Housing,10,0.3599,1.56E-01,0.1254,0.4708,5.65E-02

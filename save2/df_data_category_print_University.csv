@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,University,109,0.9469,8.66E-09,0.3248,0.946,9.74E-09
+cz,University,47,-0.7077,1.48E-03,-0.3623,-0.5077,3.75E-02
+us,University,274,0.8672,6.58E-06,1.1105,0.9503,5.27E-09
+de,University,101,-0.7232,1.04E-03,-0.2521,-0.9171,2.23E-07
+es,University,91,0.1358,6.03E-01,0.0206,0.46,6.32E-02
+nl,University,87,0.4857,4.81E-02,0.124,0.7405,6.75E-04
+fr,University,72,-0.0456,8.62E-01,-0.0126,0.0774,7.68E-01

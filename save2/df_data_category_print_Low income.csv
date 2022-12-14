@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Low income,9,0.764,3.56E-04,0.2285,0.4748,5.41E-02
+cz,Low income,10,0.1857,4.75E-01,0.1379,0.1979,4.46E-01
+us,Low income,13,-0.2938,2.52E-01,-0.2807,-0.195,4.53E-01
+de,Low income,11,0.7613,3.85E-04,0.1908,0.8189,5.81E-05
+es,Low income,12,-0.6436,5.30E-03,-0.1333,-0.6175,8.27E-03
+nl,Low income,9,0.4743,5.44E-02,0.0891,0.3948,1.17E-01
+fr,Low income,8,-0.765,3.47E-04,-0.2411,-0.874,4.53E-06

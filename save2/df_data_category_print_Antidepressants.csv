@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Antidepressants,56,0.1584,5.44E-01,0.0488,-0.2798,2.77E-01
+cz,Antidepressants,26,-0.7217,1.07E-03,-0.423,-0.5126,3.54E-02
+us,Antidepressants,74,-0.634,6.28E-03,-0.2732,-0.6781,2.77E-03
+de,Antidepressants,45,0.59,1.27E-02,0.1184,0.4936,4.41E-02
+es,Antidepressants,49,-0.4513,6.90E-02,-0.054,-0.5117,3.58E-02
+nl,Antidepressants,39,-0.6224,7.62E-03,-0.1068,-0.6605,3.90E-03
+fr,Antidepressants,42,-0.8313,3.55E-05,-0.1347,-0.8322,3.42E-05

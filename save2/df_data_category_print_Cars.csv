@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Cars,21,0.7498,5.28E-04,0.1402,0.5672,1.76E-02
+cz,Cars,20,0.5488,2.25E-02,0.24,0.5495,2.23E-02
+us,Cars,23,-0.9552,2.48E-09,-0.9507,-0.992,6.54E-15
+de,Cars,22,0.9124,3.32E-07,0.4595,0.8766,3.90E-06
+es,Cars,23,-0.5088,3.70E-02,-0.1357,-0.5879,1.31E-02
+nl,Cars,21,-0.7382,7.16E-04,-0.2259,-0.7159,1.23E-03
+fr,Cars,22,-0.8367,2.83E-05,-0.2061,-0.8052,9.64E-05

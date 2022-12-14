@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Education,22,0.9713,9.23E-11,0.8977,0.7509,5.13E-04
+cz,Education,20,-0.907,5.13E-07,-0.5112,-0.9035,6.69E-07
+us,Education,28,0.7145,1.27E-03,0.5398,0.6941,2.00E-03
+de,Education,21,-0.1481,5.70E-01,-0.0342,0.0503,8.48E-01
+es,Education,20,0.1476,5.72E-01,0.0513,0.5228,3.13E-02
+nl,Education,19,0.4596,6.34E-02,0.1596,0.5966,1.15E-02
+fr,Education,18,-0.1357,6.04E-01,-0.0484,-0.4093,1.03E-01

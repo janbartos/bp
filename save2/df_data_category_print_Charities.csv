@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Charities,25,0.9737,4.84E-11,0.3785,0.9583,1.46E-09
+cz,Charities,21,-0.884,2.51E-06,-0.4475,-0.9109,3.77E-07
+us,Charities,36,0.665,3.58E-03,0.3028,0.7603,3.97E-04
+de,Charities,25,-0.7022,1.68E-03,-0.2179,-0.8132,7.22E-05
+es,Charities,25,-0.0128,9.61E-01,-0.0021,0.1132,6.65E-01
+nl,Charities,25,0.6127,8.92E-03,0.1812,0.7835,1.99E-04
+fr,Charities,30,-0.1109,6.72E-01,-0.0232,-0.268,2.98E-01

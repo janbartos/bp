@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="repair regression first page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/2_Categories and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/2_Categories and statistics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save2/Untitled1.ipynb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +47,7 @@
       <workItem from="1669563604445" duration="1226000" />
       <workItem from="1670954976547" duration="921000" />
       <workItem from="1671025116872" duration="6961000" />
-      <workItem from="1671048881567" duration="576000" />
-    </task>
-    <task id="LOCAL-00088" summary="Interesting outliers headers">
-      <created>1669143912288</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1669143912288</updated>
+      <workItem from="1671048881567" duration="1786000" />
     </task>
     <task id="LOCAL-00089" summary="Interesting outliers headers">
       <created>1669144239190</created>
@@ -392,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671033493439</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="repair regression first page">
+      <created>1671049478024</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1671049478024</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

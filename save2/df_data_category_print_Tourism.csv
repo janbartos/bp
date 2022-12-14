@@ -1,0 +1,8 @@
+Country code,Category,Sample size,Pearson correlation,Pearson p-value,Covariance,Spearman correlation,Spearman p-value
+br,Tourism,53,0.617,8.33E-03,0.155,0.0994,7.04E-01
+cz,Tourism,62,-0.2907,2.58E-01,-0.0738,-0.1082,6.79E-01
+us,Tourism,83,0.2383,3.57E-01,0.0976,0.0748,7.75E-01
+de,Tourism,67,0.0938,7.20E-01,0.0223,0.1608,5.37E-01
+es,Tourism,49,-0.448,7.13E-02,-0.0639,-0.46,6.32E-02
+nl,Tourism,61,0.0912,7.28E-01,0.0132,-0.2718,2.91E-01
+fr,Tourism,6,-0.3595,1.56E-01,-0.063,-0.4438,7.44E-02
