@@ -100,7 +100,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     st.caption('Category: ' +  df_category.loc[df_category[langs.get(languages.get(country))] == keyword].Cathegory.values[0])
     if country != "USA":
         st.caption(
-            'Category: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].EN.values[
+            'Keyword in English: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].EN.values[
                 0])
 
 
