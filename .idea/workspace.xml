@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="repair regression first page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="repair regression first page" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,21 +43,7 @@
       <workItem from="1669371915730" duration="1522000" />
       <workItem from="1669563604445" duration="1226000" />
       <workItem from="1670954976547" duration="921000" />
-      <workItem from="1671025116872" duration="6286000" />
-    </task>
-    <task id="LOCAL-00084" summary="Interesting outliers headers">
-      <created>1669139595981</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1669139595981</updated>
-    </task>
-    <task id="LOCAL-00085" summary="Interesting outliers headers">
-      <created>1669140219519</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1669140219519</updated>
+      <workItem from="1671025116872" duration="6639000" />
     </task>
     <task id="LOCAL-00086" summary="Interesting outliers headers">
       <created>1669140278847</created>
@@ -390,7 +374,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671031059436</updated>
     </task>
-    <option name="localTasksCounter" value="133" />
+    <task id="LOCAL-00133" summary="repair regression first page">
+      <created>1671032955811</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1671032955811</updated>
+    </task>
+    <task id="LOCAL-00134" summary="repair regression first page">
+      <created>1671033237926</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1671033237926</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
