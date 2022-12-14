@@ -78,6 +78,8 @@ country = st.selectbox(
 
 df_import = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
 df_import = df_import.drop(['2021'], axis=1)
+
+df_import = df_import.drop(['Cathegory'], axis=1)
 df_transposed = df_import.set_index("keyword").T
 
 df_category = pd.read_csv("save2/out_mod_finished_mod.csv")

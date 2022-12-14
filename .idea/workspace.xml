@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="repair regression first page" />
+    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="repair regression first page">
+      <change beforePath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,21 +45,7 @@
       <workItem from="1669371915730" duration="1522000" />
       <workItem from="1669563604445" duration="1226000" />
       <workItem from="1670954976547" duration="921000" />
-      <workItem from="1671025116872" duration="6639000" />
-    </task>
-    <task id="LOCAL-00086" summary="Interesting outliers headers">
-      <created>1669140278847</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1669140278847</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Interesting outliers headers">
-      <created>1669143903036</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1669143903036</updated>
+      <workItem from="1671025116872" duration="6961000" />
     </task>
     <task id="LOCAL-00088" summary="Interesting outliers headers">
       <created>1669143912288</created>
@@ -388,7 +376,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671033237926</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="repair regression first page">
+      <created>1671033479133</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1671033479133</updated>
+    </task>
+    <task id="LOCAL-00136" summary="repair regression first page">
+      <created>1671033493439</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1671033493439</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
