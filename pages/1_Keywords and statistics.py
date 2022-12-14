@@ -87,7 +87,7 @@ df_category = pd.read_csv("save2/out_mod_finished_mod.csv")
 corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.85, 1.0))
 
 
-df_corr = pd.read_csv("df_data_" + languages.get(country) + "_corr.csv")
+df_corr = pd.read_csv("save2/df_data_" + languages.get(country) + "_corr.csv")
 
 
 #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
