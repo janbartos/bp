@@ -154,6 +154,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     abline_values = [slope * i + intercept for i in key_data]
 
 
+
     ax3.plot(key_data, abline_values, 'b' , label = "linear regression")
     ax3.plot(key_data, ftr, 'ro', label = 'original data')
     ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
