@@ -52,7 +52,7 @@ google = st.selectbox(
 )
 
 languages = {
-    "Czechia": "cz",
+    "Czech republic": "cz",
     "Brasil": "br",
     "USA": "us",
     "Spain": "es",
@@ -131,7 +131,7 @@ st.pyplot(fig)
 
 st.header('Linear regression')
 
-slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)
+slope, intercept, r_value, p_value, std__err = stats.linregress(key_data, ftr)
 col6, col7, col8, col9, col10 = st.columns(5)
 
 col6.metric("Slope", round(slope, 4))
@@ -141,8 +141,8 @@ col8.metric("R - value", round(r_value, 4))
 col9.metric("p-Value", round(p_value, 4))
 col10.metric("std_err", round(std__err, 4))
 
-x = ftr
-y = key_data
+y = ftr
+x = key_data
 
 params, _ = curve_fit(func1, x, y)
 a, b, c = params[0], params[1], params[2]
@@ -151,16 +151,16 @@ yfit1 = a*x**2+b*x+c
 
 fig2, ax3 = plt.subplots()
 
-abline_values = [slope * i + intercept for i in ftr]
+abline_values = [slope * i + intercept for i in key_data]
 
-ax3.plot(ftr, abline_values, 'b', label="linear regression")
-ax3.plot(ftr, key_data, 'ro', label='original data')
+ax3.plot(key_data, abline_values, 'b', label="linear regression")
+ax3.plot(key_data, ftr, 'ro', label='original data')
 ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
 #ax3.legend(["Original data", "Regressive line"])
 ax3.legend(loc='best', fancybox=True, shadow=True)
 ax3.grid()
-ax3.set_xlabel(r"Fertility rate")
-ax3.set_ylabel(r"Searched")
+ax3.set_xlabel(r"Searched")
+ax3.set_ylabel(r"Fertility rate")
 
 st.pyplot(fig2)
 

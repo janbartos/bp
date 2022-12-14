@@ -4,11 +4,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
 import streamlit.components.v1 as components
+from scipy.optimize import curve_fit
 from scipy import stats
 
 rc('mathtext', default='regular')
 
 
+def func1(x, a, b, c):
+    return a*x**2+b*x+c
 
 st.set_page_config(
     page_title="Hello",
@@ -40,7 +43,7 @@ google = st.selectbox(
 )
 
 languages = {
-    "Czechia": "cz",
+    "Czech republic": "cz",
     "Brasil": "br",
     "USA": "us",
     "Spain": "es",
@@ -67,7 +70,7 @@ df_import = pd.read_csv("df_data_" + languages.get(country) + ".csv")
 df_import = df_import.drop(['2021'], axis=1)
 df_transposed = df_import.set_index("keyword").T
 
-corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (-0.5, 0.5))
+corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.7, 1))
 
 df_corr = pd.read_csv("df_data_" + languages.get(country) + "_corr.csv")
 
@@ -140,7 +143,12 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
     fig2, ax3 = plt.subplots()
 
+    y = ftr
+    x = key_data
 
+    params, _ = curve_fit(func1, x, y)
+    a, b, c = params[0], params[1], params[2]
+    yfit1 = a * x ** 2 + b * x + c
 
     abline_values = [slope * i + intercept for i in key_data]
 
