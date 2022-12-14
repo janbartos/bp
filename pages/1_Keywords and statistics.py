@@ -76,7 +76,7 @@ country = st.selectbox(
     'Select country',
     languages.keys())
 
-df_import = pd.read_csv("df_data_" + languages.get(country) + ".csv")
+df_import = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
 df_import = df_import.drop(['2021'], axis=1)
 df_transposed = df_import.set_index("keyword").T
 
