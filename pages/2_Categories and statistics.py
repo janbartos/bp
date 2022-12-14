@@ -132,7 +132,7 @@ ax.set_ylabel(r"Fertility")
 ax2.set_ylabel(r"Searched")
 st.pyplot(fig)
 
-st.header('Linear regression')
+st.header('Regression')
 
 slope, intercept, r_value, p_value, std__err = stats.linregress(key_data, ftr)
 col6, col7, col8, col9, col10 = st.columns(5)
