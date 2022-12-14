@@ -62,6 +62,16 @@ fertility_codes = {
     "us": 'USA'
 }
 
+langs = {
+    "br" : "PT-BR",
+    "us" : "EN",
+    "cz" : "CS",
+    "de" : "DE",
+    "fr" : "FR",
+    "nl" : "NL",
+    "es" : "ES",
+}
+
 country = st.selectbox(
     'Select country',
     languages.keys())
@@ -70,7 +80,9 @@ df_import = pd.read_csv("df_data_" + languages.get(country) + ".csv")
 df_import = df_import.drop(['2021'], axis=1)
 df_transposed = df_import.set_index("keyword").T
 
-corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.7, 1.0))
+df_category = pd.read_csv("save2/out_mod_finished_mod.csv")
+
+corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.85, 1.0))
 
 
 df_corr = pd.read_csv("df_data_" + languages.get(country) + "_corr.csv")
@@ -84,8 +96,8 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
         df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]
     #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
     )
-
-
+if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
+    st.subheader('Category: ' +  df_category.loc[df_category[langs.get(languages.get(country))]].Cathegory.values[0])
 df_fertility = pd.read_csv("fr.csv")
 df_stats = pd.DataFrame()
 df_stats["Data"] = df_transposed[keyword].values
