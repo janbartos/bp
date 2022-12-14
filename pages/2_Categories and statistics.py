@@ -9,6 +9,9 @@ from scipy.optimize import curve_fit
 from math import exp
 
 
+from decimal import Decimal
+
+
 
 st.set_page_config(
     page_title="Hello",
