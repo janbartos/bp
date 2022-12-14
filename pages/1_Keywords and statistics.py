@@ -97,7 +97,10 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
     )
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
-    st.subheader('Category: ' +  df_category.loc[df_category[langs.get(languages.get(country))]].Cathegory.values[0])
+    st.subheader('Category: ' +   langs.get(languages.get(country)))
+    #df_category.loc[df_category[langs.get(languages.get(country))]].Cathegory.values[0])
+
+
 df_fertility = pd.read_csv("fr.csv")
 df_stats = pd.DataFrame()
 df_stats["Data"] = df_transposed[keyword].values
