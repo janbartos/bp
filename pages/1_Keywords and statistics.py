@@ -70,7 +70,7 @@ df_import = pd.read_csv("df_data_" + languages.get(country) + ".csv")
 df_import = df_import.drop(['2021'], axis=1)
 df_transposed = df_import.set_index("keyword").T
 
-corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.7, 1))
+corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.7, 1.0))
 
 df_corr = pd.read_csv("df_data_" + languages.get(country) + "_corr.csv")
 
