@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="repair regression first page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save2/Untitled1.ipynb" beforeDir="false" />
-    </list>
+    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,14 +44,7 @@
       <workItem from="1669563604445" duration="1226000" />
       <workItem from="1670954976547" duration="921000" />
       <workItem from="1671025116872" duration="6961000" />
-      <workItem from="1671048881567" duration="1786000" />
-    </task>
-    <task id="LOCAL-00089" summary="Interesting outliers headers">
-      <created>1669144239190</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1669144239190</updated>
+      <workItem from="1671048881567" duration="1806000" />
     </task>
     <task id="LOCAL-00090" summary="Interesting outliers headers">
       <created>1669147602413</created>
@@ -392,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671049478024</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="update files">
+      <created>1671052548652</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1671052548652</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,6 +441,7 @@
     <MESSAGE value="Slider repair" />
     <MESSAGE value="add regression first page" />
     <MESSAGE value="repair regression first page" />
-    <option name="LAST_COMMIT_MESSAGE" value="repair regression first page" />
+    <MESSAGE value="update files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update files" />
   </component>
 </project>

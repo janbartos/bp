@@ -104,11 +104,11 @@ st.subheader('Sample size: ' + str(len(df_sample_size[df_sample_size["Cathegory"
 col1, col2, col3, col4, col5 = st.columns(5)
 pearson = stats.pearsonr(df_transposed[category].values, df_fert)
 col1.metric("Pearson correlation", round(pearson[0], 4))
-col2.metric("p-Value", round(pearson[1], 5))
+col2.metric("p-Value", '%.2E' % pearson[1])
 col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
 spearman = stats.spearmanr(df_transposed[category].values, df_fert)
 col4.metric("Spearman correlation", round(spearman[0], 4))
-col5.metric("p-Value", round(spearman[1], 5))
+col5.metric("p-Value", '%.2E' % spearman[1])
 
 time = np.arange(2004, 2021)
 ftr = df_fert
