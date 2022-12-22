@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/2_Categories and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/2_Categories and statistics.py" afterDir="false" />
-    </list>
+    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,21 +42,7 @@
       <workItem from="1671048881567" duration="1806000" />
       <workItem from="1671224732471" duration="41000" />
       <workItem from="1671224977874" duration="36000" />
-      <workItem from="1671728860974" duration="5419000" />
-    </task>
-    <task id="LOCAL-00105" summary="Interesting outliers headers">
-      <created>1669150541114</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1669150541114</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Interesting outliers headers">
-      <created>1669150650866</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1669150650866</updated>
+      <workItem from="1671728860974" duration="5896000" />
     </task>
     <task id="LOCAL-00107" summary="Interesting outliers headers">
       <created>1669150683559</created>
@@ -390,7 +373,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671733656744</updated>
     </task>
-    <option name="localTasksCounter" value="154" />
+    <task id="LOCAL-00154" summary="update files">
+      <created>1671734402924</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1671734402924</updated>
+    </task>
+    <task id="LOCAL-00155" summary="update files">
+      <created>1671734793265</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1671734793265</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
