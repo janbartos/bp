@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/2_Categories and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/2_Categories and statistics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,14 +45,7 @@
       <workItem from="1671048881567" duration="1806000" />
       <workItem from="1671224732471" duration="41000" />
       <workItem from="1671224977874" duration="36000" />
-      <workItem from="1671728860974" duration="912000" />
-    </task>
-    <task id="LOCAL-00092" summary="Interesting outliers headers">
-      <created>1669147796433</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1669147796433</updated>
+      <workItem from="1671728860974" duration="2126000" />
     </task>
     <task id="LOCAL-00093" summary="Interesting outliers headers">
       <created>1669148081882</created>
@@ -390,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671729457116</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="update files">
+      <created>1671730290487</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1671730290487</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

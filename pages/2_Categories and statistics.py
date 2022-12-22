@@ -97,12 +97,11 @@ df_sample_size = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
 st.subheader('Sample size: ' + str(len(df_sample_size[df_sample_size["Cathegory"] == category])))
 
 col1, col2, col3, col4, col5 = st.columns(5)
-#pearson = stats.pearsonr(df_transposed[category].values, df_fert)
+
 pearson = stats.pearsonr(df_stats["Data"].values, df_stats["TFR"].values)
 col1.metric("Pearson correlation", round(pearson[0], 4))
 col2.metric("p-Value", '%.2E' % pearson[1])
 col3.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
-#spearman = stats.spearmanr(df_transposed[category].values, df_fert)
 spearman = stats.spearmanr(df_stats["Data"].values, df_stats["TFR"].values)
 col4.metric("Spearman correlation", round(spearman[0], 4))
 col5.metric("p-Value", '%.2E' % spearman[1])
@@ -155,7 +154,8 @@ abline_values = [slope * i + intercept for i in key_data]
 
 ax3.plot(key_data, abline_values, 'b', label="linear regression")
 ax3.plot(key_data, ftr, 'ro', label='original data')
-ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
+#ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
+ax3.plot(x, yfit1, label="y=%f*x^2+%f*x+%f" % tuple(params))
 #ax3.legend(["Original data", "Regressive line"])
 ax3.legend(loc='best', fancybox=True, shadow=True)
 ax3.grid()
