@@ -47,12 +47,8 @@ def func4(x, a, b, c):
     return a*exp(b*x)+c
 
 
-st.title("FTR analysis using Google Trends and Google Ngram data")
+st.title("FTR analysis using Google Trends data")
 
-google = st.selectbox(
-    'Select source',
-    ('Google Trends', 'Google Ngram')
-)
 
 languages = {
     "Czech republic": "cz",
@@ -86,15 +82,14 @@ df_transposed = df_import.set_index("Cathegory").T
 
 category = st.selectbox(
         'Select category ',
-    #df_import["keyword"].values
         df_import["Cathegory"].unique()
-    #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
     )
 
 df_fertility = pd.read_csv("fr.csv")
+
 df_stats = pd.DataFrame()
 df_stats["Data"] = df_transposed[category].values
-df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
+df_stats["TFR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
 
 df_fert = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
 
@@ -102,17 +97,19 @@ df_sample_size = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
 st.subheader('Sample size: ' + str(len(df_sample_size[df_sample_size["Cathegory"] == category])))
 
 col1, col2, col3, col4, col5 = st.columns(5)
-pearson = stats.pearsonr(df_transposed[category].values, df_fert)
+#pearson = stats.pearsonr(df_transposed[category].values, df_fert)
+pearson = stats.pearsonr(df_stats["Data"].values, df_stats["TFR"].values)
 col1.metric("Pearson correlation", round(pearson[0], 4))
 col2.metric("p-Value", '%.2E' % pearson[1])
-col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
-spearman = stats.spearmanr(df_transposed[category].values, df_fert)
+col3.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
+#spearman = stats.spearmanr(df_transposed[category].values, df_fert)
+spearman = stats.spearmanr(df_stats["Data"].values, df_stats["TFR"].values)
 col4.metric("Spearman correlation", round(spearman[0], 4))
 col5.metric("p-Value", '%.2E' % spearman[1])
 
 time = np.arange(2004, 2021)
-ftr = df_fert
-key_data = df_transposed[category].values
+ftr = df_stats["TFR"].values
+key_data = df_stats["Data"].values
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
@@ -141,7 +138,7 @@ col6.metric("Slope", round(slope, 4))
 col7.metric("Intercept", round(intercept, 4))
 col8.metric("R - value", round(r_value, 4))
 
-col9.metric("p-Value", round(p_value, 4))
+col9.metric("p-Value", '%.2E' % p_value )
 col10.metric("std_err", round(std__err, 4))
 
 y = ftr

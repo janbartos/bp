@@ -111,12 +111,10 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
 
     col1, col2, col3, col4, col5 = st.columns(5)
-    #pearson = stats.pearsonr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17])
     pearson = stats.pearsonr(df_stats["Data"].values, df_stats["FTR"].values)
     col1.metric("Pearson correlation", round(pearson[0], 4))
     col2.metric("p-Value", '%.2E' % pearson[1])
     col3.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
-    #spearman = stats.spearmanr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17])
     spearman = stats.spearmanr(df_stats["Data"].values, df_stats["FTR"].values)
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", '%.2E' % spearman[1])
@@ -126,8 +124,6 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
     time = np.arange(2004, 2021)
-    #ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
-    #key_data = df_transposed[keyword].values
     ftr = df_stats["FTR"].values
     key_data = df_stats["Data"].values
 
