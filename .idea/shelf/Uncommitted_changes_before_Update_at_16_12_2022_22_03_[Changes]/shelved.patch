@@ -1,0 +1,104 @@
+Index: pages/1_Keywords and statistics.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import streamlit as st\r\nimport pandas as pd\r\nimport numpy as np\r\nimport matplotlib.pyplot as plt\r\nfrom matplotlib import rc\r\nimport streamlit.components.v1 as components\r\nfrom scipy import stats\r\n\r\nrc('mathtext', default='regular')\r\n\r\n\r\n\r\nst.set_page_config(\r\n    page_title=\"Hello\",\r\n    page_icon=\"\uD83D\uDC4B\",\r\n)\r\n\r\n\r\nplt.rcParams.update({\r\n    \"lines.color\": \"white\",\r\n    \"patch.edgecolor\": \"white\",\r\n    \"text.color\": \"black\",\r\n    \"axes.facecolor\": \"white\",\r\n    \"axes.edgecolor\": \"lightgray\",\r\n    \"axes.labelcolor\": \"white\",\r\n    \"xtick.color\": \"white\",\r\n    \"ytick.color\": \"white\",\r\n    \"grid.color\": \"lightgray\",\r\n    \"figure.facecolor\": \"black\",\r\n    \"figure.edgecolor\": \"black\",\r\n    \"savefig.facecolor\": \"black\",\r\n    \"savefig.edgecolor\": \"black\"})\r\n\r\n\r\nst.title(\"FTR analysis using Google Trends and Google Ngram data\")\r\n\r\ngoogle = st.selectbox(\r\n    'Select source',\r\n    ('Google Trends', 'Google Ngram')\r\n)\r\n\r\nlanguages = {\r\n    \"Czechia\": \"cz\",\r\n    \"Brasil\": \"br\",\r\n    \"USA\": \"us\",\r\n    \"Spain\": \"es\",\r\n    \"Netherlands\": \"nl\",\r\n    \"Germany\": \"de\",\r\n    \"France\": \"fr\"\r\n}\r\n\r\nfertility_codes = {\r\n    \"br\": 'BRA',\r\n    \"cz\": 'CZE',\r\n    \"de\": 'DEU',\r\n    \"es\": 'ESP',\r\n    \"fr\": 'FRA',\r\n    \"nl\": 'NLD',\r\n    \"us\": 'USA'\r\n}\r\n\r\ncountry = st.selectbox(\r\n    'Select country',\r\n    languages.keys())\r\n\r\ndf_import = pd.read_csv(\"df_data_\" + languages.get(country) + \".csv\")\r\ndf_import = df_import.drop(['2021'], axis=1)\r\ndf_transposed = df_import.set_index(\"keyword\").T\r\n\r\ncorr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (-0.5, 0.5))\r\n\r\ndf_corr = pd.read_csv(\"df_data_\" + languages.get(country) + \"_corr.csv\")\r\n\r\n\r\n#df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values\r\nif len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive=\"neither\")]) != 0 :\r\n    keyword = st.selectbox(\r\n        'Select keyword ' + str(len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive=\"neither\")])) + \" available\" ,\r\n    #df_import[\"keyword\"].values\r\n        df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive=\"neither\")]\r\n    #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values\r\n    )\r\n\r\ndf_fertility = pd.read_csv(\"fr.csv\")\r\ndf_stats = pd.DataFrame()\r\ndf_stats[\"Data\"] = df_transposed[keyword].values\r\ndf_stats[\"FTR\"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values\r\n\r\n\r\n\r\ncol1, col2, col3, col4, col5 = st.columns(5)\r\npearson = stats.pearsonr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)\r\ncol1.metric(\"Pearson correlation\", round(pearson[0], 4))\r\ncol2.metric(\"p-Value\", round(pearson[1], 5))\r\ncol3.metric(\"Covariance\", round(df_stats.cov()[\"Data\"].values[1],4))\r\nspearman = stats.spearmanr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)\r\ncol4.metric(\"Spearman correlation\", round(spearman[0], 4))\r\ncol5.metric(\"p-Value\", round(spearman[1], 5))\r\n\r\n\r\n\r\n\r\nif len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive=\"neither\")]) != 0 :\r\n    time = np.arange(2004, 2021)\r\n    ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values\r\n    key_data = df_transposed[keyword].values\r\n\r\n\r\n    fig = plt.figure()\r\n    ax = fig.add_subplot(111)\r\n\r\n    lns1 = ax.plot(time, ftr, '-', label='FTR in ' + country)\r\n    ax2 = ax.twinx()\r\n    lns2 = ax2.plot(time, key_data, '-r', label=keyword)\r\n\r\n    # added these three lines\r\n    lns = lns1 + lns2\r\n    labs = [l.get_label() for l in lns]\r\n    ax.legend(lns, labs, loc=0)\r\n\r\n    ax.grid()\r\n    ax.set_xlabel(\"Years\")\r\n    ax.set_ylabel(r\"Fertility rate\")\r\n    ax2.set_ylabel(r\"Searched\")\r\n    st.pyplot(fig)\r\n\r\n    st.header('Linear regression')\r\n\r\n    slope, intercept, r_value, p_value, std__err = stats.linregress(ftr, key_data)\r\n    col6, col7, col8, col9, col10 = st.columns(5)\r\n\r\n    col6.metric(\"Slope\", round(slope, 4))\r\n    col7.metric(\"Intercept\", round(intercept, 5))\r\n    col8.metric(\"R - value\", round(r_value, 4))\r\n\r\n    col9.metric(\"p-Value\", round(p_value, 4))\r\n    col10.metric(\"std_err\", round(std__err, 5))\r\n\r\n\r\n    fig2, ax3 = plt.subplots()\r\n\r\n\r\n\r\n    abline_values = [slope * i + intercept for i in ftr]\r\n\r\n\r\n    ax3.plot(ftr, abline_values, 'b' , label = \"linear regression\")\r\n    ax3.plot(ftr, key_data, 'ro', label = 'original data')\r\n    ax3.legend([\"FTR in \" + country, str(keyword)])\r\n    ax3.grid()\r\n    ax3.set_xlabel(r\"Fertility rate\")\r\n    ax3.set_ylabel(r\"Searched\")\r\n\r\n    st.pyplot(fig2)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/1_Keywords and statistics.py b/pages/1_Keywords and statistics.py
+--- a/pages/1_Keywords and statistics.py	(revision e7a66e5019fc83330da6e2f345809982de085f42)
++++ b/pages/1_Keywords and statistics.py	(date 1671224374184)
+@@ -62,8 +62,11 @@
+ country = st.selectbox(
+     'Select country',
+     languages.keys())
+-
+-df_import = pd.read_csv("df_data_" + languages.get(country) + ".csv")
++if google == "Google Trends":
++    df_import = pd.read_csv("df_data_" + languages.get(country) + ".csv")
++else:
++    df_import = pd.read_csv("df_" + languages.get(country) + "_ngram.csv")
++
+ df_import = df_import.drop(['2021'], axis=1)
+ df_transposed = df_import.set_index("keyword").T
+ 
+@@ -81,27 +84,31 @@
+     #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
+     )
+ 
+-df_fertility = pd.read_csv("fr.csv")
+-df_stats = pd.DataFrame()
+-df_stats["Data"] = df_transposed[keyword].values
+-df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
++if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
++    df_fertility = pd.read_csv("fr.csv")
++    df_stats = pd.DataFrame()
++    df_stats["Data"] = df_transposed[keyword].values
++    df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
+ 
+ 
+ 
+-col1, col2, col3, col4, col5 = st.columns(5)
+-pearson = stats.pearsonr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
+-col1.metric("Pearson correlation", round(pearson[0], 4))
+-col2.metric("p-Value", round(pearson[1], 5))
+-col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
+-spearman = stats.spearmanr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
+-col4.metric("Spearman correlation", round(spearman[0], 4))
+-col5.metric("p-Value", round(spearman[1], 5))
++    col1, col2, col3, col4, col5 = st.columns(5)
++    pearson = stats.pearsonr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
++    col1.metric("Pearson correlation", round(pearson[0], 4))
++    col2.metric("p-Value", round(pearson[1], 5))
++    col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
++    spearman = stats.spearmanr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values)
++    col4.metric("Spearman correlation", round(spearman[0], 4))
++    col5.metric("p-Value", round(spearman[1], 5))
+ 
+ 
+ 
+ 
+ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
+-    time = np.arange(2004, 2021)
++    if google == "Google Trends":
++        time = np.arange(2004, 2021)
++    else:
++        time = np.arange(2004, 2020)
+     ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values
+     key_data = df_transposed[keyword].values
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"3d844407-bd78-4091-ac0a-6342343376c8\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2HlIe15XvsXGlKgBVKYZ8PSm1lo\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"3d844407-bd78-4091-ac0a-6342343376c8\" name=\"Changes\" comment=\"\" />\r\n      <created>1668853335477</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1668853335477</updated>\r\n      <workItem from=\"1668853337882\" duration=\"9446000\" />\r\n      <workItem from=\"1668970559272\" duration=\"3842000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision e7a66e5019fc83330da6e2f345809982de085f42)
++++ b/.idea/workspace.xml	(date 1671224527840)
+@@ -34,10 +34,23 @@
+       <updated>1668853335477</updated>
+       <workItem from="1668853337882" duration="9446000" />
+       <workItem from="1668970559272" duration="3842000" />
++      <workItem from="1671223891209" duration="479000" />
++      <workItem from="1671224438421" duration="89000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+ </project>
+\ No newline at end of file
