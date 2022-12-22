@@ -18,6 +18,20 @@ st.set_page_config(
     page_icon="👋",
 )
 
+def fmt_float(q):
+    s = '%.4g' % q
+    if s.endswith('.0000'):
+        s = s[:-5]
+    return s
+
+def fmt_float1(q):
+
+    s = '%.4g' % q
+    if s.endswith('.0000'):
+        s = s[:-5]
+    if q >= 0:
+        s = "+" + s
+    return s
 
 plt.rcParams.update({
     "lines.color": "white",
@@ -167,13 +181,20 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     a, b, c = params[0], params[1], params[2]
     yfit1 = a * x ** 2 + b * x + c
 
+    polyline = np.linspace(min(x), max(x), 17)
+
+    model = np.poly1d(np.polyfit(x, y, 2))
+
+
     abline_values = [slope * i + intercept for i in key_data]
 
 
 
     ax3.plot(key_data, abline_values, 'b' , label = "linear regression")
     ax3.plot(key_data, ftr, 'ro', label = 'original data')
-    ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
+    ax3.plot(polyline, model(polyline),
+             label="y=%sx^2 %s*x %s" % (fmt_float(model[2]), fmt_float1(model[1]), fmt_float1(model[0])))
+    #ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
     ax3.legend(["FTR in " + country, str(keyword)])
     ax3.legend(loc='best', fancybox=True, shadow=True)
     ax3.grid()

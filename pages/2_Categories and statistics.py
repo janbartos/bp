@@ -48,18 +48,6 @@ plt.rcParams.update({
     "savefig.facecolor": "black",
     "savefig.edgecolor": "black"})
 
-def func1(x, a, b, c):
-    return a*x**2+b*x+c
-
-def func2(x, a, b, c):
-    return a*x**3+b*x+c
-
-def func3(x, a, b, c):
-    return a*x**3+b*x**2+c
-
-def func4(x, a, b, c):
-    return a*exp(b*x)+c
-
 
 st.title("FTR analysis using Google Trends data")
 
@@ -157,11 +145,6 @@ col10.metric("std_err", round(std__err, 4))
 y = ftr
 x = key_data
 
-params, _ = curve_fit(func1, x, y)
-a, b, c = params[0], params[1], params[2]
-yfit1 = a*x**2+b*x+c
-
-
 fig2, ax3 = plt.subplots()
 
 polyline = np.linspace(min(x), max(x), 17)
@@ -174,13 +157,8 @@ abline_values = [slope * i + intercept for i in key_data]
 
 ax3.plot(key_data, abline_values, 'b', label="linear regression")
 ax3.plot(key_data, ftr, 'ro', label='original data')
-#ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
-#ax3.plot(polyline, yfit1, label="y=%f*x^2+%f*x+%f" % tuple(params))
 ax3.plot(polyline, model(polyline), label="y=%sx^2 %s*x %s" % (fmt_float(model[2]), fmt_float1(model[1]), fmt_float1(model[0])))
 
-
-#ax3.plot(polyline, model(polyline), label=model)
-#ax3.legend(["Original data", "Regressive line"])
 ax3.legend(loc='best', fancybox=True, shadow=True)
 ax3.grid()
 ax3.set_xlabel(r"Searched")
@@ -188,8 +166,7 @@ ax3.set_ylabel(r"Fertility rate")
 
 st.pyplot(fig2)
 
-st.subheader(model)
-st.text(model)
+
 
 
 
