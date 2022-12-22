@@ -150,12 +150,14 @@ yfit1 = a*x**2+b*x+c
 
 fig2, ax3 = plt.subplots()
 
+polyline = np.linspace(min(x), max(x), 17)
+
 abline_values = [slope * i + intercept for i in key_data]
 
 ax3.plot(key_data, abline_values, 'b', label="linear regression")
 ax3.plot(key_data, ftr, 'ro', label='original data')
 #ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
-ax3.plot(x, yfit1, label="y=%f*x^2+%f*x+%f" % tuple(params))
+ax3.plot(polyline, yfit1, label="y=%f*x^2+%f*x+%f" % tuple(params))
 #ax3.legend(["Original data", "Regressive line"])
 ax3.legend(loc='best', fancybox=True, shadow=True)
 ax3.grid()
