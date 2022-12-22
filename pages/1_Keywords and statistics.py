@@ -90,35 +90,34 @@ corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.85, 1.0))
 df_corr = pd.read_csv("save2/df_data_" + languages.get(country) + "_corr.csv")
 
 
-#df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
-if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
+if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0:
     keyword = st.selectbox(
         'Select keyword ' + str(len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")])) + " available" ,
-    #df_import["keyword"].values
         df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]
-    #df_corr['fertility'].between(corr[0], corr[1], inclusive=False).values
     )
-if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
-    st.caption('Category: ' +  df_category.loc[df_category[langs.get(languages.get(country))] == keyword].Cathegory.values[0])
+if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0:
+    st.caption('Category: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].Cathegory.values[0])
     if country != "USA":
         st.caption(
             'Keyword in English: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].EN.values[
                 0])
 
-
-df_fertility = pd.read_csv("fr.csv")
-df_stats = pd.DataFrame()
-df_stats["Data"] = df_transposed[keyword].values
-df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
+if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0:
+    df_fertility = pd.read_csv("fr.csv")
+    df_stats = pd.DataFrame()
+    df_stats["Data"] = df_transposed[keyword].values
+    df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
 
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
 
     col1, col2, col3, col4, col5 = st.columns(5)
-    pearson = stats.pearsonr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17])
+    #pearson = stats.pearsonr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17])
+    pearson = stats.pearsonr(df_stats["Data"].values, df_stats["FTR"].values)
     col1.metric("Pearson correlation", round(pearson[0], 4))
     col2.metric("p-Value", '%.2E' % pearson[1])
-    col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
-    spearman = stats.spearmanr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17])
+    col3.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
+    #spearman = stats.spearmanr(df_transposed[keyword].values,df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17])
+    spearman = stats.spearmanr(df_stats["Data"].values, df_stats["FTR"].values)
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", '%.2E' % spearman[1])
 
@@ -127,9 +126,10 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
     time = np.arange(2004, 2021)
-    ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
-    key_data = df_transposed[keyword].values
-
+    #ftr = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
+    #key_data = df_transposed[keyword].values
+    ftr = df_stats["FTR"].values
+    key_data = df_stats["Data"].values
 
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -158,7 +158,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     col7.metric("Intercept", round(intercept, 5))
     col8.metric("R - value", round(r_value, 4))
 
-    col9.metric("p-Value", round(p_value, 4))
+    col9.metric("p-Value", '%.2E' % p_value)
     col10.metric("std_err", round(std__err, 5))
 
 
