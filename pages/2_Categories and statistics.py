@@ -30,7 +30,7 @@ def fmt_float1(q):
     if s.endswith('.0000'):
         s = s[:-5]
     if q >= 0:
-        s = "+ " + s
+        s = "+" + s
     return s
 
 plt.rcParams.update({
