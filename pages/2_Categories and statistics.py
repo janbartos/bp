@@ -167,7 +167,7 @@ ax3.plot(key_data, abline_values, 'b', label="linear regression")
 ax3.plot(key_data, ftr, 'ro', label='original data')
 #ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
 #ax3.plot(polyline, yfit1, label="y=%f*x^2+%f*x+%f" % tuple(params))
-ax3.plot(polyline, model(polyline), label="y=%fx^2+%f*x+%f" % (fmt_float(model[2]), fmt_float(model[1], fmt_float(model[0]))))
+ax3.plot(polyline, model(polyline), label="y=%fx^2+%f*x+%f" % (fmt_float(model[2]), fmt_float(model[1]), fmt_float(model[0])))
 
 
 #ax3.plot(polyline, model(polyline), label=model)
