@@ -178,9 +178,9 @@ st.subheader(model[1])
 st.subheader(model[2])
 st.subheader(model[3])
 
-st.subheader(model[a])
-st.subheader(model[b])
-st.subheader(model[c])
+st.subheader(a)
+st.subheader(b)
+st.subheader(c)
 
 
 
