@@ -165,7 +165,7 @@ ax3.plot(key_data, ftr, 'ro', label='original data')
 #ax3.plot(polyline, model(polyline), label="y=%f*x^2+%f*x+%f" % tuple(params))
 
 
-ax3.plot(polyline, model(polyline), label="y=%.2E*x^2+%.2E*x+%.2E" % (model[2], model[1], model[0]))
+ax3.plot(polyline, model(polyline), label=model)
 #ax3.legend(["Original data", "Regressive line"])
 ax3.legend(loc='best', fancybox=True, shadow=True)
 ax3.grid()
