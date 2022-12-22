@@ -163,7 +163,7 @@ ax3.plot(key_data, ftr, 'ro', label='original data')
 #ax3.plot(x, yfit1, label="y=%5.f*x^2+%5.f*x+%5.3f" % tuple(params))
 #ax3.plot(polyline, yfit1, label="y=%f*x^2+%f*x+%f" % tuple(params))
 #ax3.plot(polyline, model(polyline), label="y=%f*x^2+%f*x+%f" % tuple(params))
-ax3.plot(polyline, model(polyline), label=model[0] + model[1]  +model[2] + model[3] )
+ax3.plot(polyline, model(polyline), label=model[3])
 #ax3.legend(["Original data", "Regressive line"])
 ax3.legend(loc='best', fancybox=True, shadow=True)
 ax3.grid()
@@ -173,7 +173,14 @@ ax3.set_ylabel(r"Fertility rate")
 st.pyplot(fig2)
 
 
+st.subheader(model[0])
+st.subheader(model[1])
+st.subheader(model[2])
+st.subheader(model[3])
 
+st.subheader(model[a])
+st.subheader(model[b])
+st.subheader(model[c])
 
 
 
