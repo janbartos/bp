@@ -174,7 +174,7 @@ ax3.set_ylabel(r"Fertility rate")
 
 st.pyplot(fig2)
 
-
+st.subheader(model)
 
 
 
