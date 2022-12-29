@@ -118,20 +118,23 @@ corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.85, 1.0))
 
 
 
-
+selectBool = False
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0:
     keyword = st.selectbox(
         'Select keyword ' + str(len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")])) + " available" ,
         df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]
     )
-if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0:
+    selectBool = True
+
+if selectBool:
     st.caption('Category: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].Cathegory.values[0])
     if country != "USA":
         st.caption(
             'Keyword in English: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].EN.values[
                 0])
+
 lenArr = 0
-if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0:
+if selectBool:
     df_fertility = pd.read_csv("fr.csv")
     df_stats = pd.DataFrame()
     df_stats["Data"] = df_transposed[keyword].values
@@ -142,7 +145,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
         lenArr = 16
     df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:lenArr]
 
-if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
+if selectBool:
 
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_stats["Data"].values, df_stats["FTR"].values)
@@ -156,7 +159,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
 
-if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
+if selectBool:
     time = np.arange(2004, 2004 + lenArr)
     ftr = df_stats["FTR"].values
     key_data = df_stats["Data"].values
