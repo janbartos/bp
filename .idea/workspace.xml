@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/df_data_de_ngram_corr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/df_data_de_ngram_corr.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/df_data_us_ngram_corr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/df_data_us_ngram_corr.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/df_de_ngram.csv" beforeDir="false" afterPath="$PROJECT_DIR$/df_de_ngram.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/df_us_ngram.csv" beforeDir="false" afterPath="$PROJECT_DIR$/df_us_ngram.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save2/out_mod_finished_mod.csv" beforeDir="false" afterPath="$PROJECT_DIR$/save2/out_mod_finished_mod.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/df_data_fr_ngram_corr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/df_data_fr_ngram_corr.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/df_fr_ngram.csv" beforeDir="false" afterPath="$PROJECT_DIR$/df_fr_ngram.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,14 +47,7 @@
       <workItem from="1671224732471" duration="41000" />
       <workItem from="1671224977874" duration="36000" />
       <workItem from="1671728860974" duration="7656000" />
-      <workItem from="1672337012100" duration="4369000" />
-    </task>
-    <task id="LOCAL-00127" summary="repair regression first page">
-      <created>1671029683368</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1671029683368</updated>
+      <workItem from="1672337012100" duration="4605000" />
     </task>
     <task id="LOCAL-00128" summary="repair regression first page">
       <created>1671030601158</created>
@@ -396,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672339953493</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="update files">
+      <created>1672341574297</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1672341574297</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
