@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files" />
+    <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,14 +45,7 @@
       <workItem from="1671224732471" duration="41000" />
       <workItem from="1671224977874" duration="36000" />
       <workItem from="1671728860974" duration="7656000" />
-      <workItem from="1672337012100" duration="1761000" />
-    </task>
-    <task id="LOCAL-00124" summary="Slider repair">
-      <created>1671029555801</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1671029555801</updated>
+      <workItem from="1672337012100" duration="2557000" />
     </task>
     <task id="LOCAL-00125" summary="Slider repair">
       <created>1671029602914</created>
@@ -388,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672338781040</updated>
     </task>
-    <option name="localTasksCounter" value="173" />
+    <task id="LOCAL-00173" summary="update files">
+      <created>1672338911798</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1672338911798</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
