@@ -126,7 +126,8 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     )
     selectBool = True
 
-if keyword in df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")].keyword.values:
+#if keyword in df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")].keyword.values:
+if keyword != "":
     st.caption('Category: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].Cathegory.values[0])
     if country != "USA":
         st.caption(
