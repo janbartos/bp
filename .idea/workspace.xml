@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files">
-      <change afterPath="$PROJECT_DIR$/df_data_de_ngram_corr.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/df_data_es_ngram_corr.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/df_data_fr_ngram_corr.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/df_data_us_ngram_corr.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/df_de_ngram.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/df_es_ngram.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/df_fr_ngram.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/df_us_ngram.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,21 +45,7 @@
       <workItem from="1671224732471" duration="41000" />
       <workItem from="1671224977874" duration="36000" />
       <workItem from="1671728860974" duration="7656000" />
-      <workItem from="1672337012100" duration="723000" />
-    </task>
-    <task id="LOCAL-00121" summary="Interesting outliers headers">
-      <created>1671028733524</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1671028733524</updated>
-    </task>
-    <task id="LOCAL-00122" summary="Interesting outliers headers">
-      <created>1671029494534</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1671029494534</updated>
+      <workItem from="1672337012100" duration="1238000" />
     </task>
     <task id="LOCAL-00123" summary="Interesting outliers headers">
       <created>1671029526438</created>
@@ -399,7 +376,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672337738974</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="update files">
+      <created>1672337893145</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1672337893145</updated>
+    </task>
+    <task id="LOCAL-00171" summary="update files">
+      <created>1672338260197</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1672338260197</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
