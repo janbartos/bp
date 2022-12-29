@@ -138,12 +138,13 @@ if keyword != "":
 
     df_fertility = pd.read_csv("fr.csv")
     df_stats = pd.DataFrame()
-    df_stats["Data"] = df_transposed[keyword].values
+
 
     if google == "Google Trends":
         lenArr = 17
     else:
         lenArr = 16
+    df_stats["Data"] = df_transposed[keyword].values[:lenArr]
     df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:lenArr]
 
 
