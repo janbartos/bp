@@ -62,6 +62,12 @@ languages = {
     "Germany": "de",
     "France": "fr"
 }
+languages_ngram = {
+    "USA": "us",
+    "Spain": "es",
+    "Germany": "de",
+    "France": "fr"
+}
 
 fertility_codes = {
     "br": 'BRA',
@@ -83,14 +89,26 @@ langs = {
     "es" : "ES",
 }
 
+if google == "Google Trends":
+    selected = languages
+else:
+    selected = languages_ngram
+
 country = st.selectbox(
     'Select country',
-    languages.keys())
+    selected.keys())
 
-df_import = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
-df_import = df_import.drop(['2021'], axis=1)
 
-df_import = df_import.drop(['Cathegory'], axis=1)
+if google == "Google Trends":
+    df_import = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
+    df_import = df_import.drop(['2021'], axis=1)
+
+    df_import = df_import.drop(['Cathegory'], axis=1)
+    df_corr = pd.read_csv("save2/df_data_" + languages.get(country) + "_corr.csv")
+else:
+    df_import = pd.read_csv("df_" + languages.get(country) + "_ngram.csv")
+    df_corr = pd.read_csv("df_data_" + languages.get(country) + "_ngram_corr.csv")
+
 df_transposed = df_import.set_index("keyword").T
 
 df_category = pd.read_csv("save2/out_mod_finished_mod.csv")
@@ -98,7 +116,7 @@ df_category = pd.read_csv("save2/out_mod_finished_mod.csv")
 corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.85, 1.0))
 
 
-df_corr = pd.read_csv("save2/df_data_" + languages.get(country) + "_corr.csv")
+
 
 
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0:
@@ -112,12 +130,17 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
         st.caption(
             'Keyword in English: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].EN.values[
                 0])
-
+lenArr = 0
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0:
     df_fertility = pd.read_csv("fr.csv")
     df_stats = pd.DataFrame()
     df_stats["Data"] = df_transposed[keyword].values
-    df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
+
+    if google == "Google Trends":
+        lenArr = 17
+    else:
+        lenArr = 16
+    df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:lenArr]
 
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
 
@@ -134,7 +157,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
 if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")]) != 0 :
-    time = np.arange(2004, 2021)
+    time = np.arange(2004, 2004 + lenArr)
     ftr = df_stats["FTR"].values
     key_data = df_stats["Data"].values
 
@@ -176,7 +199,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
 
 
 
-    polyline = np.linspace(min(x), max(x), 17)
+    polyline = np.linspace(min(x), max(x), lenArr)
 
     model = np.poly1d(np.polyfit(x, y, 2))
 
