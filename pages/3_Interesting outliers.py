@@ -35,11 +35,16 @@ with tab1:
     df_stats["Data"] = df_transposed["guevara"].values[:17]
     df_stats["FTR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
+    df_stats_t = pd.DataFrame()
+    df_stats_t["Data"] = df_transposed["guevara"].values[:17]
+    df_stats_t["FTR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
+
     st.subheader('Guevara')
     keyword = "guevara"
 
     st.dataframe(df_stats)
     st.dataframe(df_stats.cov())
+    st.dataframe(df_stats_t.cov())
 
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
