@@ -13,7 +13,8 @@ st.set_page_config(
     page_title="Index"
 )
 
-st.write("# Welcome to Total fertility rate analysis with Google Trends and Google Ngram")
+st.write("# Total fertility rate analysis with Google Trends and Google Ngram")
 
+st.markdown("Please select a demo located in left menu")
 st.sidebar.success("Select a demo above.")
 
