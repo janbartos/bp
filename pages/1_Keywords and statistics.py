@@ -54,7 +54,7 @@ google = st.selectbox(
 )
 
 languages = {
-    "Czech republic": "cz",
+    "Czech Republic": "cz",
     "Brazil": "br",
     "USA": "us",
     "Spain": "es",

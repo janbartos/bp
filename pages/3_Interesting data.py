@@ -301,7 +301,7 @@ with tab4:
     df_edu_cz["Time"] = time
 
 
-    st.subheader('Education category in Czech republic')
+    st.subheader('Education category in Czech Republic')
 
 
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -314,7 +314,7 @@ with tab4:
     col5.metric("p-Value", '%.2E' % spearman[1])
 
 
-    base1 = alt.Chart(df_edu_cz, title="🔵 Education  🔴 FTR in Czech republic" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_edu_cz, title="🔵 Education  🔴 FTR in Czech Republic" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
         alt.Y('FTR', scale=alt.Scale(domain=(1.2, 1.75)))

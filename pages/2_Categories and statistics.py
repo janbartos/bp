@@ -53,7 +53,7 @@ st.title("FTR analysis using Google Trends data")
 
 
 languages = {
-    "Czech republic": "cz",
+    "Czech Republic": "cz",
     "Brazil": "br",
     "USA": "us",
     "Spain": "es",
