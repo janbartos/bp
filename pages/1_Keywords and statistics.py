@@ -111,7 +111,7 @@ else:
 
 df_transposed = df_import.set_index("keyword").T
 
-df_category = pd.read_csv("data/keyword_translation.csv")
+df_category = pd.read_csv("data/keyword_translations.csv")
 
 corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.85, 1.0))
 

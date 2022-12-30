@@ -227,9 +227,9 @@ with tab2:
 with tab3:
     st.header('Consumerism in USA')
 
-    df_import_us = pd.read_csv("save2/df_data_groupby_us.csv")
+    df_import_us = pd.read_csv("data/data_groupby/df_data_groupby_us.csv")
 
-    df_fertility = pd.read_csv("fr.csv")
+    df_fertility = pd.read_csv("data/fr.csv")
 
     df_import_us = df_import_us.drop(['2021'], axis=1)
 
@@ -291,7 +291,7 @@ with tab4:
     df_edu_cz["Time"] = time
 
 
-    st.subheader('Education category in Czechia')
+    st.subheader('Education category in Czech republic')
 
 
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -304,7 +304,7 @@ with tab4:
     col5.metric("p-Value", round(spearman[1], 5))
 
 
-    base1 = alt.Chart(df_edu_cz, title="🔵 Education  🔴 FTR in Czechia" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_edu_cz, title="🔵 Education  🔴 FTR in Czech republic" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
         alt.Y('FTR', scale=alt.Scale(domain=(1.2, 1.75)))
@@ -316,7 +316,7 @@ with tab4:
 
     st.altair_chart(c)
 
-    df_import = pd.read_csv("df_data_cz.csv")
+    df_import = pd.read_csv("data/df_data/df_data_cz.csv")
     df_import = df_import.drop(['2021'], axis=1)
     df_transposed = df_import.set_index("keyword").T
 
