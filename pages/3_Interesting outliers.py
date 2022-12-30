@@ -30,8 +30,10 @@ with tab1:
     df_fert = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
     df_stats = pd.DataFrame()
+
+
     df_stats["Data"] = df_transposed["guevara"].values[:17]
-    df_stats["FTR"] = df_fert
+    df_stats["FTR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
     st.subheader('Guevara')
     keyword = "guevara"
