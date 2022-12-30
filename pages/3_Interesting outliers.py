@@ -20,9 +20,9 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Fall of the left in Brasil", "Universit
 
 with tab1:
 
-    df_fertility = pd.read_csv("fr.csv")
+    df_fertility = pd.read_csv("data/fr.csv")
 
-    df_import = pd.read_csv("df_data_br.csv")
+    df_import = pd.read_csv("data/df_data/df_data_br.csv")
     df_import = df_import.drop(['2021'], axis=1)
     df_transposed = df_import.set_index("keyword").T
 
@@ -129,10 +129,10 @@ with tab2:
     st.header('Universities in Americas')
 
 
-    df_import_br = pd.read_csv("save2/df_data_groupby_br.csv")
-    df_import_us = pd.read_csv("save2/df_data_groupby_us.csv")
+    df_import_br = pd.read_csv("data/data_groupby/df_data_groupby_br.csv")
+    df_import_us = pd.read_csv("data/data_groupby/df_data_groupby_us.csv")
 
-    df_fertility = pd.read_csv("fr.csv")
+    df_fertility = pd.read_csv("data/fr.csv")
 
     df_import_br = df_import_br.drop(['2021'], axis=1)
     df_import_us = df_import_us.drop(['2021'], axis=1)
@@ -273,9 +273,9 @@ with tab3:
 
 with tab4:
     st.header('Education in Czechia')
-    df_import_cz = pd.read_csv("save2/df_data_groupby_cz.csv")
+    df_import_cz = pd.read_csv("data/data_groupby/df_data_groupby_cz.csv")
 
-    df_fertility = pd.read_csv("fr.csv")
+    df_fertility = pd.read_csv("data/fr.csv")
 
     df_import_cz = df_import_cz.drop(['2021'], axis=1)
 
@@ -396,11 +396,11 @@ with tab5:
     st.header("How to sleep in USA")
 
 
-    df_fertility = pd.read_csv("fr.csv")
+    df_fertility = pd.read_csv("data/fr.csv")
 
-    df_import_br = pd.read_csv("df_data_br.csv")
-    df_import_nl = pd.read_csv("df_data_nl.csv")
-    df_import_us = pd.read_csv("df_data_us.csv")
+    df_import_br = pd.read_csv("data/df_data/df_data_br.csv")
+    df_import_nl = pd.read_csv("data/df_data/df_data_nl.csv")
+    df_import_us = pd.read_csv("data/df_data/df_data_us.csv")
 
 
     df_import_br = df_import_br.drop(['2021'], axis=1)

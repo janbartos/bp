@@ -76,7 +76,7 @@ country = st.selectbox(
     'Select country',
     languages.keys())
 
-df_import = pd.read_csv("save2/df_data_groupby_" + languages.get(country) + ".csv")
+df_import = pd.read_csv("data/data_groupby/df_data_groupby_" + languages.get(country) + ".csv")
 df_import = df_import.drop(['2021'], axis=1)
 df_transposed = df_import.set_index("Cathegory").T
 
@@ -87,7 +87,7 @@ category = st.selectbox(
         df_import["Cathegory"].unique()
     )
 
-df_fertility = pd.read_csv("fr.csv")
+df_fertility = pd.read_csv("data/fr.csv")
 
 df_stats = pd.DataFrame()
 df_stats["Data"] = df_transposed[category].values
@@ -95,7 +95,7 @@ df_stats["TFR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(lang
 
 df_fert = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:17]
 
-df_sample_size = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
+df_sample_size = pd.read_csv("data/df_data/df_data_" + languages.get(country) + ".csv")
 st.subheader('Sample size: ' + str(len(df_sample_size[df_sample_size["Cathegory"] == category])))
 
 col1, col2, col3, col4, col5 = st.columns(5)

@@ -100,18 +100,18 @@ country = st.selectbox(
 
 
 if google == "Google Trends":
-    df_import = pd.read_csv("save2/df_data_" + languages.get(country) + ".csv")
+    df_import = pd.read_csv("data/df_data/df_data_" + languages.get(country) + ".csv")
     df_import = df_import.drop(['2021'], axis=1)
 
     df_import = df_import.drop(['Cathegory'], axis=1)
-    df_corr = pd.read_csv("save2/df_data_" + languages.get(country) + "_corr.csv")
+    df_corr = pd.read_csv("data//df_data_corr/df_data_" + languages.get(country) + "_corr.csv")
 else:
-    df_import = pd.read_csv("df_" + languages.get(country) + "_ngram.csv")
-    df_corr = pd.read_csv("df_data_" + languages.get(country) + "_ngram_corr.csv")
+    df_import = pd.read_csv("data/ngram/df_" + languages.get(country) + "_ngram.csv")
+    df_corr = pd.read_csv("data/ngram/df_data_" + languages.get(country) + "_ngram_corr.csv")
 
 df_transposed = df_import.set_index("keyword").T
 
-df_category = pd.read_csv("save2/out_mod_finished_mod.csv")
+df_category = pd.read_csv("data/keyword_translation.csv")
 
 corr = st.slider('Select desired Pearson correlation', -1.0, 1.0, (0.85, 1.0))
 
@@ -136,7 +136,7 @@ if keyword != "":
 
     lenArr = 0
 
-    df_fertility = pd.read_csv("fr.csv")
+    df_fertility = pd.read_csv("data/fr.csv")
     df_stats = pd.DataFrame()
 
 
