@@ -15,7 +15,7 @@ def func1(x, a, b, c):
 st.title("Interesting data")
 
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Fall of the left in Brasil", "Universities in Americas", "Consumerism in USA", "Education in Czechia" ,"Sleep deprivation"])
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["Fall of the left in Brazil", "Universities in Americas", "Consumerism in USA", "Education in Czechia" ,"Sleep deprivation"])
 
 
 with tab1:
@@ -99,7 +99,7 @@ with tab1:
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
-    lns1 = ax.plot(time, ftr, '-', label='FTR in Brasil')
+    lns1 = ax.plot(time, ftr, '-', label='FTR in Brazil')
     ax2 = ax.twinx()
     lns2 = ax2.plot(time, Guevara_data, '-r', label="Guevara")
     lns3 = ax2.plot(time, Marx_data, "-o", label="Marx")
