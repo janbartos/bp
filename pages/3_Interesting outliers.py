@@ -42,22 +42,16 @@ with tab1:
     st.subheader('Guevara')
     keyword = "guevara"
 
-    df_stats_t = pd.DataFrame()
-    df_stats_t["Data"] = df_transposed[keyword].values[:17]
-    df_stats_t["FTR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
-    st.dataframe(df_stats)
-    st.dataframe(df_stats.cov())
-    st.dataframe(df_stats_t.cov())
 
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
     col1.metric("Pearson correlation", round(pearson[0], 4))
-    col2.metric("p-Value", round(pearson[1], 5))
+    col2.metric("p-Value", '%.2E' % pearson[1])
     col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
     spearman = stats.spearmanr(df_transposed[keyword].values[:17], df_fert)
     col4.metric("Spearman correlation", round(spearman[0], 4))
-    col5.metric("p-Value", round(spearman[1], 5))
+    col5.metric("p-Value", '%.2E' % spearman[1])
 
     st.subheader('Marx')
 
@@ -69,11 +63,11 @@ with tab1:
     col6, col7, col8, col9, col10 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
     col6.metric("Pearson correlation", round(pearson[0], 4))
-    col7.metric("p-Value", round(pearson[1], 5))
+    col7.metric("p-Value", '%.2E' % pearson[1])
     col8.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
     spearman = stats.spearmanr(df_transposed[keyword].values[:17], df_fert)
     col9.metric("Spearman correlation", round(spearman[0], 4))
-    col10.metric("p-Value", round(spearman[1], 5))
+    col10.metric("p-Value", '%.2E' % spearman[1])
 
     st.subheader("Sindicatos - Work unions")
 
@@ -84,11 +78,11 @@ with tab1:
     col11, col12, col13, col14, col15 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
     col11.metric("Pearson correlation", round(pearson[0], 4))
-    col12.metric("p-Value", round(pearson[1], 5))
+    col12.metric("p-Value",  '%.2E' % pearson[1])
     col13.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
     spearman = stats.spearmanr(df_transposed[keyword].values[:17], df_fert)
     col14.metric("Spearman correlation", round(spearman[0], 4))
-    col15.metric("p-Value", round(spearman[1], 5))
+    col15.metric("p-Value", '%.2E' % spearman[1])
 
 
 
@@ -179,11 +173,11 @@ with tab2:
     col16, col17, col18, col19, col20 = st.columns(5)
     pearson = stats.pearsonr(df_uni_us["University"].values , df_uni_us["FTR"].values )
     col16.metric("Pearson correlation", round(pearson[0], 4))
-    col17.metric("p-Value", round(pearson[1], 5))
+    col17.metric("p-Value",  '%.2E' % pearson[1])
     col18.metric("Covariance", round(df_uni_us[["University", "FTR"]].cov()["University"].values[1],4))
     spearman = stats.spearmanr(df_uni_us["University"].values, df_uni_us["FTR"].values)
     col19.metric("Spearman correlation", round(spearman[0], 4))
-    col20.metric("p-Value", round(spearman[1], 5))
+    col20.metric("p-Value",  '%.2E' % spearman[1])
 
     st.subheader('University category in Brazil')
 
@@ -191,11 +185,11 @@ with tab2:
     col21, col22, col23, col24, col25 = st.columns(5)
     pearson = stats.pearsonr(df_uni_br["University"].values , df_uni_br["FTR"].values )
     col21.metric("Pearson correlation", round(pearson[0], 4))
-    col22.metric("p-Value", round(pearson[1], 5))
+    col22.metric("p-Value", '%.2E' % pearson[1])
     col23.metric("Covariance", round(df_uni_br[["University", "FTR"]].cov()["University"].values[1],4))
     spearman = stats.spearmanr(df_uni_br["University"].values, df_uni_br["FTR"].values)
     col24.metric("Spearman correlation", round(spearman[0], 4))
-    col25.metric("p-Value", round(spearman[1], 5))
+    col25.metric("p-Value", '%.2E' % spearman[1])
 
 
 
@@ -313,11 +307,11 @@ with tab4:
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_edu_cz["Education"].values , df_edu_cz["FTR"].values )
     col1.metric("Pearson correlation", round(pearson[0], 4))
-    col2.metric("p-Value", round(pearson[1], 5))
+    col2.metric("p-Value", '%.2E' % pearson[1])
     col3.metric("Covariance", round(df_edu_cz[["Education", "FTR"]].cov()["Education"].values[1],4))
     spearman = stats.spearmanr(df_edu_cz["Education"].values, df_edu_cz["FTR"].values)
     col4.metric("Spearman correlation", round(spearman[0], 4))
-    col5.metric("p-Value", round(spearman[1], 5))
+    col5.metric("p-Value", '%.2E' % spearman[1])
 
 
     base1 = alt.Chart(df_edu_cz, title="🔵 Education  🔴 FTR in Czech republic" ).encode(alt.X('Time'))
@@ -351,11 +345,11 @@ with tab4:
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
     col1.metric("Pearson correlation", round(pearson[0], 4))
-    col2.metric("p-Value", round(pearson[1], 5))
+    col2.metric("p-Value", '%.2E' % pearson[1])
     col3.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
     col4.metric("Spearman correlation", round(spearman[0], 4))
-    col5.metric("p-Value", round(spearman[1], 5))
+    col5.metric("p-Value",  '%.2E' % spearman[1])
 
     st.subheader('Zeměpis')
 
@@ -366,11 +360,11 @@ with tab4:
     col6, col7, col8, col9, col10 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
     col6.metric("Pearson correlation", round(pearson[0], 4))
-    col7.metric("p-Value", round(pearson[1], 5))
+    col7.metric("p-Value", '%.2E' % pearson[1])
     col8.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
     col9.metric("Spearman correlation", round(spearman[0], 4))
-    col10.metric("p-Value", round(spearman[1], 5))
+    col10.metric("p-Value", '%.2E' % spearman[1])
 
     st.subheader("Chemie")
 
@@ -380,11 +374,11 @@ with tab4:
     col11, col12, col13, col14, col15 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
     col11.metric("Pearson correlation", round(pearson[0], 4))
-    col12.metric("p-Value", round(pearson[1], 5))
+    col12.metric("p-Value", '%.2E' % pearson[1])
     col13.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
     col14.metric("Spearman correlation", round(spearman[0], 4))
-    col15.metric("p-Value", round(spearman[1], 5))
+    col15.metric("p-Value", '%.2E' % spearman[1], 5)
 
     st.subheader("Vysoká škola")
 
@@ -394,11 +388,11 @@ with tab4:
     col16, col17, col18, col19, col20 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
     col16.metric("Pearson correlation", round(pearson[0], 4))
-    col17.metric("p-Value", round(pearson[1], 5))
+    col17.metric("p-Value", '%.2E' % pearson[1])
     col18.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
     col19.metric("Spearman correlation", round(spearman[0], 4))
-    col20.metric("p-Value", round(spearman[1], 5))
+    col20.metric("p-Value", '%.2E' % spearman[1])
 
     ftr = df_fert
     y1 = df_transposed["vysoká škola"].values
@@ -451,11 +445,11 @@ with tab5:
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_import_br[keyword].values, df_fert_br)
     col1.metric("Pearson correlation", round(pearson[0], 4))
-    col2.metric("p-Value", round(pearson[1], 5))
+    col2.metric("p-Value", '%.2E' % pearson[1])
     col3.metric("Covariance", round(df_stats_br[["Data", "FTR"]].cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_import_br[keyword].values, df_fert_br)
     col4.metric("Spearman correlation", round(spearman[0], 4))
-    col5.metric("p-Value", round(spearman[1], 5))
+    col5.metric("p-Value", '%.2E' % spearman[1])
 
 
 
@@ -474,11 +468,11 @@ with tab5:
     col6, col7, col8, col9, col10 = st.columns(5)
     pearson = stats.pearsonr(df_import_nl[keyword_nl].values, df_fert_nl)
     col6.metric("Pearson correlation", round(pearson[0], 4))
-    col7.metric("p-Value", round(pearson[1], 5))
+    col7.metric("p-Value", '%.2E' % pearson[1])
     col8.metric("Covariance", round(df_stats_nl[["Data", "FTR"]].cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_import_nl[keyword_nl].values, df_fert_nl)
     col9.metric("Spearman correlation", round(spearman[0], 4))
-    col10.metric("p-Value", round(spearman[1], 5))
+    col10.metric("p-Value", '%.2E' % spearman[1])
 
     keyword_us = "how to sleep"
 
@@ -495,11 +489,11 @@ with tab5:
     col11, col12, col13, col14, col15 = st.columns(5)
     pearson = stats.pearsonr(df_import_us[keyword].values, df_fert_us)
     col11.metric("Pearson correlation", round(pearson[0], 4))
-    col12.metric("p-Value", round(pearson[1], 5))
+    col12.metric("p-Value", '%.2E' % pearson[1])
     col13.metric("Covariance", round(df_stats_us[["Data", "FTR"]].cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_import_us[keyword].values, df_fert_us)
     col14.metric("Spearman correlation", round(spearman[0], 4))
-    col15.metric("p-Value", round(spearman[1], 5))
+    col15.metric("p-Value", '%.2E' % spearman[1])
 
     base1 = alt.Chart(df_stats_us, title="🔵 How to sleep  🔴 FTR in USA" ).encode(alt.X('Time'))
 
