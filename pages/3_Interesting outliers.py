@@ -425,6 +425,10 @@ with tab5:
     df_import_nl = df_import_nl.drop(['2021'], axis=1)
     df_import_us = df_import_us.drop(['2021'], axis=1)
 
+    df_import_br = df_import_br.drop(['Cathegory'], axis=1)
+    df_import_nl = df_import_nl.drop(['Cathegory'], axis=1)
+    df_import_us = df_import_us.drop(['Cathegory'], axis=1)
+
     df_import_br = df_import_br.set_index("keyword").T
     df_import_nl = df_import_nl.set_index("keyword").T
     df_import_us = df_import_us.set_index("keyword").T
