@@ -35,12 +35,14 @@ with tab1:
     df_stats["Data"] = df_transposed["guevara"].values[:17]
     df_stats["FTR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
-    df_stats_t = pd.DataFrame()
-    df_stats_t["Data"] = df_transposed["guevara"].values[:17]
-    df_stats_t["FTR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
+
 
     st.subheader('Guevara')
     keyword = "guevara"
+
+    df_stats_t = pd.DataFrame()
+    df_stats_t["Data"] = df_transposed[keyword].values[:17]
+    df_stats_t["FTR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
     st.dataframe(df_stats)
     st.dataframe(df_stats.cov())
