@@ -39,6 +39,7 @@ with tab1:
     keyword = "guevara"
 
     st.dataframe(df_stats)
+    st.dataframe(df_stats.cov())
 
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
