@@ -24,6 +24,8 @@ with tab1:
 
     df_import = pd.read_csv("data/df_data/df_data_br.csv")
     df_import = df_import.drop(['2021'], axis=1)
+    df_import = df_import.drop(['Cathegory'], axis=1)
+
     df_transposed = df_import.set_index("keyword").T
 
 
