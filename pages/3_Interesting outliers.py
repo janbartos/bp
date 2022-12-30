@@ -38,6 +38,8 @@ with tab1:
     st.subheader('Guevara')
     keyword = "guevara"
 
+    st.dataframe(df_stats)
+
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
     col1.metric("Pearson correlation", round(pearson[0], 4))
