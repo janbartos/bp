@@ -30,7 +30,7 @@ with tab1:
     df_fert = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
     df_stats = pd.DataFrame()
-    df_stats["Data"] = df_transposed["guevara"].values
+    df_stats["Data"] = df_transposed["guevara"].values[:17]
     df_stats["FTR"] = df_fert
 
     st.subheader('Guevara')
@@ -50,7 +50,7 @@ with tab1:
     keyword = "marx"
 
 
-    df_stats["Data"] = df_transposed[keyword].values
+    df_stats["Data"] = df_transposed[keyword].values[:17]
 
     col6, col7, col8, col9, col10 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert)
@@ -64,7 +64,8 @@ with tab1:
     st.subheader("Sindicatos - Work unions")
 
     keyword = "sindicatos"
-    df_stats["Data"] = df_transposed[keyword].values
+
+    df_stats["Data"] = df_transposed[keyword].values[:17]
 
     col11, col12, col13, col14, col15 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert)
@@ -78,10 +79,10 @@ with tab1:
 
 
     time = np.arange(2004, 2021)
-    ftr = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values
-    Guevara_data = df_transposed["guevara"].values
-    Marx_data = df_transposed["marx"].values
-    Sindicatos_data = df_transposed["sindicatos"].values
+    ftr = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
+    Guevara_data = df_transposed["guevara"].values[:17]
+    Marx_data = df_transposed["marx"].values[:17]
+    Sindicatos_data = df_transposed["sindicatos"].values[:17]
 
 
 
