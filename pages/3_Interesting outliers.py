@@ -340,7 +340,7 @@ with tab4:
 
 
     df_stats = pd.DataFrame()
-    df_stats["Data"] = df_transposed["guevara"].values
+    df_stats["Data"] = df_transposed["guevara"].values[:17]
     df_stats["FTR"] = df_fert_cz
 
     st.subheader('Univerzita')
@@ -359,7 +359,7 @@ with tab4:
 
     keyword = "zeměpis"
 
-    df_stats["Data"] = df_transposed[keyword].values
+    df_stats["Data"] = df_transposed[keyword].values[:17]
 
     col6, col7, col8, col9, col10 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
@@ -373,7 +373,7 @@ with tab4:
     st.subheader("Chemie")
 
     keyword = "chemie"
-    df_stats["Data"] = df_transposed[keyword].values
+    df_stats["Data"] = df_transposed[keyword].values[:17]
 
     col11, col12, col13, col14, col15 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
@@ -387,7 +387,7 @@ with tab4:
     st.subheader("Vysoká škola")
 
     keyword = "vysoká škola"
-    df_stats["Data"] = df_transposed[keyword].values
+    df_stats["Data"] = df_transposed[keyword].values[:17]
 
     col16, col17, col18, col19, col20 = st.columns(5)
     pearson = stats.pearsonr(df_transposed[keyword].values, df_fert_cz)
