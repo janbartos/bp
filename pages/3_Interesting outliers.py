@@ -501,7 +501,7 @@ with tab5:
         alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
     )
     b = base1.mark_line().encode(
-        alt.Y('Data', scale=alt.Scale(domain=(10, 45)))
+        alt.Y('Data', scale=alt.Scale(domain=(10, 80)))
     )
     c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
@@ -512,7 +512,7 @@ with tab5:
         alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
     )
     e = base2.mark_line().encode(
-        alt.Y('Data', scale=alt.Scale(domain=(4, 18)))
+        alt.Y('Data', scale=alt.Scale(domain=(0, 85)))
     )
 
     f = alt.layer(d, e).resolve_scale(y='independent').interactive()
@@ -520,10 +520,10 @@ with tab5:
     base3 = alt.Chart(df_stats_nl, title="🔵 slaaptekort  🔴 FTR in Netherlands").encode(alt.X('Time'))
 
     g = base3.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
+        alt.Y('FTR', scale=alt.Scale(domain=(1.55, 1.8)))
     )
     i = base3.mark_line().encode(
-        alt.Y('Data', scale=alt.Scale(domain=(4, 18)))
+        alt.Y('Data', scale=alt.Scale(domain=(4, 35)))
     )
 
     j = alt.layer(g, i).resolve_scale(y='independent').interactive()

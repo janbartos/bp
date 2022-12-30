@@ -147,7 +147,7 @@ if keyword != "":
     df_stats["Data"] = df_transposed[keyword].values[:lenArr]
     df_stats["FTR"] = df_fertility[df_fertility.LOCATION == fertility_codes.get(languages.get(country))]['Value'].values[:lenArr]
 
-    st.dataframe(df_stats)
+
 
     col1, col2, col3, col4, col5 = st.columns(5)
     pearson = stats.pearsonr(df_stats["Data"].values, df_stats["FTR"].values)
