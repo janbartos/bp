@@ -293,6 +293,7 @@ with tab4:
     df_fertility = pd.read_csv("data/fr.csv")
 
     df_import_cz = df_import_cz.drop(['2021'], axis=1)
+    df_import_cz = df_import_cz.drop(['Cathegory'], axis=1)
 
     df_import_cz = df_import_cz.set_index("Cathegory").T
 
