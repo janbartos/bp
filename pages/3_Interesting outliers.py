@@ -37,11 +37,11 @@ with tab1:
     keyword = "guevara"
 
     col1, col2, col3, col4, col5 = st.columns(5)
-    pearson = stats.pearsonr(df_transposed[keyword].values, df_fert)
+    pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
     col1.metric("Pearson correlation", round(pearson[0], 4))
     col2.metric("p-Value", round(pearson[1], 5))
     col3.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
-    spearman = stats.spearmanr(df_transposed[keyword].values, df_fert)
+    spearman = stats.spearmanr(df_transposed[keyword].values[:17], df_fert)
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", round(spearman[1], 5))
 
@@ -53,11 +53,11 @@ with tab1:
     df_stats["Data"] = df_transposed[keyword].values[:17]
 
     col6, col7, col8, col9, col10 = st.columns(5)
-    pearson = stats.pearsonr(df_transposed[keyword].values, df_fert)
+    pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
     col6.metric("Pearson correlation", round(pearson[0], 4))
     col7.metric("p-Value", round(pearson[1], 5))
     col8.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
-    spearman = stats.spearmanr(df_transposed[keyword].values, df_fert)
+    spearman = stats.spearmanr(df_transposed[keyword].values[:17], df_fert)
     col9.metric("Spearman correlation", round(spearman[0], 4))
     col10.metric("p-Value", round(spearman[1], 5))
 
@@ -68,11 +68,11 @@ with tab1:
     df_stats["Data"] = df_transposed[keyword].values[:17]
 
     col11, col12, col13, col14, col15 = st.columns(5)
-    pearson = stats.pearsonr(df_transposed[keyword].values, df_fert)
+    pearson = stats.pearsonr(df_transposed[keyword].values[:17], df_fert)
     col11.metric("Pearson correlation", round(pearson[0], 4))
     col12.metric("p-Value", round(pearson[1], 5))
     col13.metric("Covariance", round(df_stats.cov()["Data"].values[1],4))
-    spearman = stats.spearmanr(df_transposed[keyword].values, df_fert)
+    spearman = stats.spearmanr(df_transposed[keyword].values[:17], df_fert)
     col14.metric("Spearman correlation", round(spearman[0], 4))
     col15.metric("p-Value", round(spearman[1], 5))
 
