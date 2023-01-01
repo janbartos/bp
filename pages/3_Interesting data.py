@@ -536,7 +536,7 @@ with tab5:
 
     st.altair_chart(c | f)
     st.altair_chart(j)
-    st.markdown("Některé data klíčových slov týkající se spánku z Nizozemska, Brazílie a Spojených států vykazují významné hodnoty korelací spojené s plodností.  Spánková deprivace a její vliv na plodnost určitě stojí za další výzkum.")
+    st.markdown("Some keyword data on sleep from the Netherlands, Brazil and the United States show significant values for correlations associated with fertility. Sleep deprivation and its effect on fertility is certainly worth further research.")
 
 #slaap netherlands
 #como dorme brasil

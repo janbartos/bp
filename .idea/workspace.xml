@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files">
+      <change afterPath="$PROJECT_DIR$/notebooks/correlationNgram.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notebooks/modifyJson.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/groupby.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notebooks/Untitled1.ipynb" beforeDir="false" />
@@ -52,14 +54,7 @@
       <workItem from="1672337012100" duration="4698000" />
       <workItem from="1672433000686" duration="398000" />
       <workItem from="1672437959697" duration="2559000" />
-      <workItem from="1672599638088" duration="1915000" />
-    </task>
-    <task id="LOCAL-00152" summary="update files">
-      <created>1671733625316</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1671733625316</updated>
+      <workItem from="1672599638088" duration="2249000" />
     </task>
     <task id="LOCAL-00153" summary="update files">
       <created>1671733656744</created>
@@ -397,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672440541093</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="update files">
+      <created>1672601906031</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1672601906032</updated>
+    </task>
+    <option name="localTasksCounter" value="202" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
