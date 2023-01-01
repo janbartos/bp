@@ -133,9 +133,12 @@ with tab1:
         )
     st.altair_chart(bar_chart, use_container_width=True)
 
+
+    st.markdown("As can be seen, the electoral success of left-wing candidates has declined, as has interest in left-wing keywords such as trade unions and Marx. The keywords show a high similarity to fertility in Brazil and it will certainly be worth exploring the data in the future.")
+
 with tab2:
 
-    st.header('Universities in Americas')
+    st.header('Universities in US and Brazil')
 
 
     df_import_br = pd.read_csv("data/data_groupby/df_data_groupby_br.csv")
@@ -232,6 +235,8 @@ with tab2:
     st.subheader('University enrollment in USA')
     st.altair_chart(bar_chart, use_container_width=True)
 
+    st.markdown("It can be seen that interest in universities in Brazil and the United States has been declining for a long time, at least in the United States this is confirmed by data on the number of applicants to universities. The fertility rate in Brazil shows a high correlation with the data from the university category.  ")
+
 #https://educationdata.org/college-enrollment-statistics
 with tab3:
     st.header('Consumerism in USA')
@@ -278,6 +283,7 @@ with tab3:
     c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
     st.altair_chart(c)
+    st.markdown("US data from the consumerism category containing keywords such as Ikea or Walmart show interesting data, a correlation of over 0.9 shows that studying this category may yield interesting data in the future.")
     #https://www.pnas.org/doi/10.1073/pnas.1909857117
 
 with tab4:
@@ -378,7 +384,7 @@ with tab4:
     col13.metric("Covariance", round(df_stats.cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_transposed[keyword].values, df_fert_cz)
     col14.metric("Spearman correlation", round(spearman[0], 4))
-    col15.metric("p-Value", '%.2E' % spearman[1], 5)
+    col15.metric("p-Value", '%.2E' % spearman[1])
 
     st.subheader("Vysoká škola")
 
@@ -400,7 +406,7 @@ with tab4:
     y3 = df_transposed["zeměpis"].values
     y4 = df_transposed["Univerzita"].values
 
-
+    st.markdown("It can be seen that interest in education is declining in the Czech Republic while fertility is rising. This is in direct contrast to data from Brazil and the United States, where as interest in education declines, fertility declines. These contradictory data are certainly worth exploring further in the future. ")
 
 #Education
 #univerzita, zeměpis, chemie, vysoká škola
@@ -530,7 +536,7 @@ with tab5:
 
     st.altair_chart(c | f)
     st.altair_chart(j)
-
+    st.markdown("Některé data klíčových slov týkající se spánku z Nizozemska, Brazílie a Spojených států vykazují významné hodnoty korelací spojené s plodností.  Spánková deprivace a její vliv na plodnost určitě stojí za další výzkum.")
 
 #slaap netherlands
 #como dorme brasil
