@@ -10,10 +10,6 @@ from scipy import stats
 rc('mathtext', default='regular')
 
 
-st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
-)
 
 def fmt_float(q):
     s = '%.4g' % q
@@ -126,7 +122,7 @@ if len(df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither
     )
     selectBool = True
 
-#if keyword in df_corr[df_corr['fertility'].between(corr[0], corr[1], inclusive="neither")].keyword.values:
+
 if keyword != "":
     st.caption('Category: ' + df_category.loc[df_category[langs.get(languages.get(country))] == keyword].Cathegory.values[0])
     if country != "USA":
@@ -171,7 +167,7 @@ if keyword != "":
     ax2 = ax.twinx()
     lns2 = ax2.plot(time, key_data, '-r', label=keyword)
 
-    # added these three lines
+
     lns = lns1 + lns2
     labs = [l.get_label() for l in lns]
     ax.legend(lns, labs, loc=0)
@@ -179,7 +175,7 @@ if keyword != "":
     ax.grid()
     ax.set_xlabel("Years")
     ax.set_ylabel(r"Fertility rate")
-    ax2.set_ylabel(r"Searched")
+    ax2.set_ylabel(r"Data")
     st.pyplot(fig)
 
     st.header('Regression')
@@ -218,9 +214,8 @@ if keyword != "":
     ax3.legend(["FTR in " + country, str(keyword)])
     ax3.legend(loc='best', fancybox=True, shadow=True)
     ax3.grid()
-    ax3.set_xlabel(r"Searched")
+    ax3.set_xlabel(r"Data")
     ax3.set_ylabel(r"Fertility rate")
 
     st.pyplot(fig2)
 
-    ## sesion_state

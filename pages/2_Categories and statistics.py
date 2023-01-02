@@ -13,10 +13,7 @@ from decimal import Decimal
 
 
 
-st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
-)
+
 
 def fmt_float(q):
     s = '%.4g' % q
@@ -119,7 +116,7 @@ lns1 = ax.plot(time, ftr, '-', label='FTR in ' + country)
 ax2 = ax.twinx()
 lns2 = ax2.plot(time, key_data, '-r', label=category)
 
-# added these three lines
+
 lns = lns1 + lns2
 labs = [l.get_label() for l in lns]
 ax.legend(lns, labs, loc=0)
@@ -127,7 +124,7 @@ ax.legend(lns, labs, loc=0)
 ax.grid()
 ax.set_xlabel("Years")
 ax.set_ylabel(r"Fertility")
-ax2.set_ylabel(r"Searched")
+ax2.set_ylabel(r"Data")
 st.pyplot(fig)
 
 st.header('Regression')
@@ -161,7 +158,7 @@ ax3.plot(polyline, model(polyline), label="y=%sx^2 %s*x %s" % (fmt_float(model[2
 
 ax3.legend(loc='best', fancybox=True, shadow=True)
 ax3.grid()
-ax3.set_xlabel(r"Searched")
+ax3.set_xlabel(r"Data")
 ax3.set_ylabel(r"Fertility rate")
 
 st.pyplot(fig2)

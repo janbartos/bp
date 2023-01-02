@@ -113,7 +113,7 @@ with tab1:
     ax.grid()
     ax.set_xlabel("Years")
     ax.set_ylabel(r"Fertility")
-    ax2.set_ylabel(r"Searched")
+    ax2.set_ylabel(r"Data")
     st.pyplot(fig)
 
     chart_data = pd.DataFrame({
@@ -408,8 +408,7 @@ with tab4:
 
     st.markdown("It can be seen that interest in education is declining in the Czech Republic while fertility is rising. This is in direct contrast to data from Brazil and the United States, where as interest in education declines, fertility declines. These contradictory data are certainly worth exploring further in the future. ")
 
-#Education
-#univerzita, zeměpis, chemie, vysoká škola
+
 with tab5:
     st.header("How to sleep in USA")
 
@@ -538,5 +537,3 @@ with tab5:
     st.altair_chart(j)
     st.markdown("Some keyword data on sleep from the Netherlands, Brazil and the United States show significant values for correlations associated with fertility. Sleep deprivation and its effect on fertility is certainly worth further research.")
 
-#slaap netherlands
-#como dorme brasil

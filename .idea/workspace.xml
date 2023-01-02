@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d844407-bd78-4091-ac0a-6342343376c8" name="Changes" comment="update files">
-      <change afterPath="$PROJECT_DIR$/notebooks/correlationNgram.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/modifyJson.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/Untitled.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/groupby.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/Untitled1.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/mergeFiles.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/mergeFiles.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/1_Keywords and statistics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/2_Categories and statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/2_Categories and statistics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/3_Interesting data.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_Interesting data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
