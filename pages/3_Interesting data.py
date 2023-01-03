@@ -105,7 +105,6 @@ with tab1:
     lns3 = ax2.plot(time, Marx_data, "-o", label="Marx")
     lns4 = ax2.plot(time, Sindicatos_data, "-b", label="Sindicados")
 
-    # added these three lines
     lns = lns1 + lns2 + lns4 + lns3
     labs = [l.get_label() for l in lns]
     ax.legend(lns, labs, loc=0)
