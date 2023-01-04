@@ -35,7 +35,7 @@ with tab1:
 
 
     df_stats["Data"] = df_transposed["guevara"].values[:17]
-    df_stats["FTR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
+    df_stats["TFR"] = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
 
 
 
@@ -87,7 +87,7 @@ with tab1:
 
 
     time = np.arange(2004, 2021)
-    ftr = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
+    tfr = df_fertility[df_fertility.LOCATION == "BRA"]['Value'].values[:17]
     Guevara_data = df_transposed["guevara"].values[:17]
     Marx_data = df_transposed["marx"].values[:17]
     Sindicatos_data = df_transposed["sindicatos"].values[:17]
@@ -99,7 +99,7 @@ with tab1:
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
-    lns1 = ax.plot(time, ftr, '-', label='FTR in Brazil')
+    lns1 = ax.plot(time, tfr, '-', label='TFR in Brazil')
     ax2 = ax.twinx()
     lns2 = ax2.plot(time, Guevara_data, '-r', label="Guevara")
     lns3 = ax2.plot(time, Marx_data, "-o", label="Marx")
@@ -158,13 +158,13 @@ with tab2:
 
     df_uni_us = pd.DataFrame()
     df_uni_us["University"] = df_import_us["University"].values
-    df_uni_us["FTR"] = df_fert_us
+    df_uni_us["TFR"] = df_fert_us
     df_uni_us["Time"] = time
 
 
     df_uni_br = pd.DataFrame()
     df_uni_br["University"] = df_import_br["University"].values
-    df_uni_br["FTR"] = df_fert_br
+    df_uni_br["TFR"] = df_fert_br
     df_uni_br["Time"] = time
 
 
@@ -173,11 +173,11 @@ with tab2:
 
 
     col16, col17, col18, col19, col20 = st.columns(5)
-    pearson = stats.pearsonr(df_uni_us["University"].values , df_uni_us["FTR"].values )
+    pearson = stats.pearsonr(df_uni_us["University"].values , df_uni_us["TFR"].values )
     col16.metric("Pearson correlation", round(pearson[0], 4))
     col17.metric("p-Value",  '%.2E' % pearson[1])
-    col18.metric("Covariance", round(df_uni_us[["University", "FTR"]].cov()["University"].values[1],4))
-    spearman = stats.spearmanr(df_uni_us["University"].values, df_uni_us["FTR"].values)
+    col18.metric("Covariance", round(df_uni_us[["University", "TFR"]].cov()["University"].values[1],4))
+    spearman = stats.spearmanr(df_uni_us["University"].values, df_uni_us["TFR"].values)
     col19.metric("Spearman correlation", round(spearman[0], 4))
     col20.metric("p-Value",  '%.2E' % spearman[1])
 
@@ -185,32 +185,32 @@ with tab2:
 
 
     col21, col22, col23, col24, col25 = st.columns(5)
-    pearson = stats.pearsonr(df_uni_br["University"].values , df_uni_br["FTR"].values )
+    pearson = stats.pearsonr(df_uni_br["University"].values , df_uni_br["TFR"].values )
     col21.metric("Pearson correlation", round(pearson[0], 4))
     col22.metric("p-Value", '%.2E' % pearson[1])
-    col23.metric("Covariance", round(df_uni_br[["University", "FTR"]].cov()["University"].values[1],4))
-    spearman = stats.spearmanr(df_uni_br["University"].values, df_uni_br["FTR"].values)
+    col23.metric("Covariance", round(df_uni_br[["University", "TFR"]].cov()["University"].values[1],4))
+    spearman = stats.spearmanr(df_uni_br["University"].values, df_uni_br["TFR"].values)
     col24.metric("Spearman correlation", round(spearman[0], 4))
     col25.metric("p-Value", '%.2E' % spearman[1])
 
 
 
 
-    base1 = alt.Chart(df_uni_us, title="🔵 University  🔴 FTR in USA" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_uni_us, title="🔵 University  🔴 TFR in USA" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+        alt.Y('TFR', scale=alt.Scale(domain=(1.6, 2.15)))
     )
     b = base1.mark_line().encode(
         alt.Y('University', scale=alt.Scale(domain=(10, 45)))
     )
     c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
-    base2 = alt.Chart(df_uni_br, title= "🔵 University  🔴 FTR in Brazil").encode(alt.X('Time'))
+    base2 = alt.Chart(df_uni_br, title= "🔵 University  🔴 TFR in Brazil").encode(alt.X('Time'))
 
 
     d = base2.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
+        alt.Y('TFR', scale=alt.Scale(domain=(1.7, 2.05)))
     )
     e = base2.mark_line().encode(
         alt.Y('University', scale=alt.Scale(domain=(4, 18)))
@@ -254,7 +254,7 @@ with tab3:
 
     df_con_us = pd.DataFrame()
     df_con_us["Consumerism"] = df_import_us["Consumerism"].values
-    df_con_us["FTR"] = df_fert_us
+    df_con_us["TFR"] = df_fert_us
     df_con_us["Time"] = time
 
 
@@ -262,19 +262,19 @@ with tab3:
 
 
     col1, col2, col3, col4, col5 = st.columns(5)
-    pearson = stats.pearsonr(df_con_us["Consumerism"].values , df_con_us["FTR"].values )
+    pearson = stats.pearsonr(df_con_us["Consumerism"].values , df_con_us["TFR"].values )
     col1.metric("Pearson correlation", round(pearson[0], 4))
     col2.metric("p-Value", '%.2E' % pearson[1])
-    col3.metric("Covariance", round(df_con_us[["Consumerism", "FTR"]].cov()["Consumerism"].values[1],4))
-    spearman = stats.spearmanr(df_con_us["Consumerism"].values, df_con_us["FTR"].values)
+    col3.metric("Covariance", round(df_con_us[["Consumerism", "TFR"]].cov()["Consumerism"].values[1],4))
+    spearman = stats.spearmanr(df_con_us["Consumerism"].values, df_con_us["TFR"].values)
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", '%.2E' % spearman[1])
 
 
-    base1 = alt.Chart(df_con_us, title="🔵 Consumerism  🔴 FTR in USA" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_con_us, title="🔵 Consumerism  🔴 TFR in USA" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+        alt.Y('TFR', scale=alt.Scale(domain=(1.6, 2.15)))
     )
     b = base1.mark_line().encode(
         alt.Y('Consumerism', scale=alt.Scale(domain=(10, 45)))
@@ -302,7 +302,7 @@ with tab4:
 
     df_edu_cz = pd.DataFrame()
     df_edu_cz["Education"] = df_import_cz["Education"].values
-    df_edu_cz["FTR"] = df_fert_cz
+    df_edu_cz["TFR"] = df_fert_cz
     df_edu_cz["Time"] = time
 
 
@@ -310,19 +310,19 @@ with tab4:
 
 
     col1, col2, col3, col4, col5 = st.columns(5)
-    pearson = stats.pearsonr(df_edu_cz["Education"].values , df_edu_cz["FTR"].values )
+    pearson = stats.pearsonr(df_edu_cz["Education"].values , df_edu_cz["TFR"].values )
     col1.metric("Pearson correlation", round(pearson[0], 4))
     col2.metric("p-Value", '%.2E' % pearson[1])
-    col3.metric("Covariance", round(df_edu_cz[["Education", "FTR"]].cov()["Education"].values[1],4))
-    spearman = stats.spearmanr(df_edu_cz["Education"].values, df_edu_cz["FTR"].values)
+    col3.metric("Covariance", round(df_edu_cz[["Education", "TFR"]].cov()["Education"].values[1],4))
+    spearman = stats.spearmanr(df_edu_cz["Education"].values, df_edu_cz["TFR"].values)
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", '%.2E' % spearman[1])
 
 
-    base1 = alt.Chart(df_edu_cz, title="🔵 Education  🔴 FTR in Czech Republic" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_edu_cz, title="🔵 Education  🔴 TFR in Czech Republic" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.2, 1.75)))
+        alt.Y('TFR', scale=alt.Scale(domain=(1.2, 1.75)))
     )
     b = base1.mark_line().encode(
         alt.Y('Education', scale=alt.Scale(domain=(26, 40)))
@@ -342,7 +342,7 @@ with tab4:
 
     df_stats = pd.DataFrame()
     df_stats["Data"] = df_transposed["guevara"].values[:17]
-    df_stats["FTR"] = df_fert_cz
+    df_stats["TFR"] = df_fert_cz
 
     st.subheader('Univerzita')
     keyword = "Univerzita"
@@ -399,7 +399,7 @@ with tab4:
     col19.metric("Spearman correlation", round(spearman[0], 4))
     col20.metric("p-Value", '%.2E' % spearman[1])
 
-    ftr = df_fert
+    tfr = df_fert
     y1 = df_transposed["vysoká škola"].values
     y2 = df_transposed["chemie"].values
     y3 = df_transposed["zeměpis"].values
@@ -440,7 +440,7 @@ with tab5:
 
     df_stats_br = pd.DataFrame()
     df_stats_br["Data"] = df_import_br[keyword_br].values
-    df_stats_br["FTR"] = df_fert_br
+    df_stats_br["TFR"] = df_fert_br
     df_stats_br["Time"] = range(2004, 2021)
 
     st.subheader(keyword_br)
@@ -450,7 +450,7 @@ with tab5:
     pearson = stats.pearsonr(df_import_br[keyword].values, df_fert_br)
     col1.metric("Pearson correlation", round(pearson[0], 4))
     col2.metric("p-Value", '%.2E' % pearson[1])
-    col3.metric("Covariance", round(df_stats_br[["Data", "FTR"]].cov()["Data"].values[1], 4))
+    col3.metric("Covariance", round(df_stats_br[["Data", "TFR"]].cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_import_br[keyword].values, df_fert_br)
     col4.metric("Spearman correlation", round(spearman[0], 4))
     col5.metric("p-Value", '%.2E' % spearman[1])
@@ -461,7 +461,7 @@ with tab5:
 
     df_stats_nl = pd.DataFrame()
     df_stats_nl["Data"] = df_import_nl[keyword_nl].values
-    df_stats_nl["FTR"] = df_fert_nl
+    df_stats_nl["TFR"] = df_fert_nl
     df_stats_nl["Time"] = range(2004, 2021)
 
 
@@ -473,7 +473,7 @@ with tab5:
     pearson = stats.pearsonr(df_import_nl[keyword_nl].values, df_fert_nl)
     col6.metric("Pearson correlation", round(pearson[0], 4))
     col7.metric("p-Value", '%.2E' % pearson[1])
-    col8.metric("Covariance", round(df_stats_nl[["Data", "FTR"]].cov()["Data"].values[1], 4))
+    col8.metric("Covariance", round(df_stats_nl[["Data", "TFR"]].cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_import_nl[keyword_nl].values, df_fert_nl)
     col9.metric("Spearman correlation", round(spearman[0], 4))
     col10.metric("p-Value", '%.2E' % spearman[1])
@@ -482,7 +482,7 @@ with tab5:
 
     df_stats_us = pd.DataFrame()
     df_stats_us["Data"] = df_import_us[keyword_us].values
-    df_stats_us["FTR"] = df_fert_us
+    df_stats_us["TFR"] = df_fert_us
     df_stats_us["Time"] = range(2004, 2021)
 
     st.subheader(keyword_us)
@@ -494,26 +494,26 @@ with tab5:
     pearson = stats.pearsonr(df_import_us[keyword].values, df_fert_us)
     col11.metric("Pearson correlation", round(pearson[0], 4))
     col12.metric("p-Value", '%.2E' % pearson[1])
-    col13.metric("Covariance", round(df_stats_us[["Data", "FTR"]].cov()["Data"].values[1], 4))
+    col13.metric("Covariance", round(df_stats_us[["Data", "TFR"]].cov()["Data"].values[1], 4))
     spearman = stats.spearmanr(df_import_us[keyword].values, df_fert_us)
     col14.metric("Spearman correlation", round(spearman[0], 4))
     col15.metric("p-Value", '%.2E' % spearman[1])
 
-    base1 = alt.Chart(df_stats_us, title="🔵 How to sleep  🔴 FTR in USA" ).encode(alt.X('Time'))
+    base1 = alt.Chart(df_stats_us, title="🔵 How to sleep  🔴 TFR in USA" ).encode(alt.X('Time'))
 
     a = base1.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.6, 2.15)))
+        alt.Y('TFR', scale=alt.Scale(domain=(1.6, 2.15)))
     )
     b = base1.mark_line().encode(
         alt.Y('Data', scale=alt.Scale(domain=(10, 80)))
     )
     c = alt.layer(a, b).resolve_scale(y='independent').interactive()
 
-    base2 = alt.Chart(df_stats_br, title= "🔵 Como dormir  🔴 FTR in Brazil").encode(alt.X('Time'))
+    base2 = alt.Chart(df_stats_br, title= "🔵 Como dormir  🔴 TFR in Brazil").encode(alt.X('Time'))
 
 
     d = base2.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.7, 2.05)))
+        alt.Y('TFR', scale=alt.Scale(domain=(1.7, 2.05)))
     )
     e = base2.mark_line().encode(
         alt.Y('Data', scale=alt.Scale(domain=(0, 85)))
@@ -521,10 +521,10 @@ with tab5:
 
     f = alt.layer(d, e).resolve_scale(y='independent').interactive()
 
-    base3 = alt.Chart(df_stats_nl, title="🔵 slaaptekort  🔴 FTR in Netherlands").encode(alt.X('Time'))
+    base3 = alt.Chart(df_stats_nl, title="🔵 slaaptekort  🔴 TFR in Netherlands").encode(alt.X('Time'))
 
     g = base3.mark_line(color='red').encode(
-        alt.Y('FTR', scale=alt.Scale(domain=(1.55, 1.8)))
+        alt.Y('TFR', scale=alt.Scale(domain=(1.55, 1.8)))
     )
     i = base3.mark_line().encode(
         alt.Y('Data', scale=alt.Scale(domain=(4, 35)))

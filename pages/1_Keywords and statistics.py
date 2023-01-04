@@ -42,7 +42,7 @@ plt.rcParams.update({
     "savefig.edgecolor": "black"})
 
 
-st.title("FTR analysis using Google Trends and Google Ngram data")
+st.title("TFR analysis using Google Trends and Google Ngram data")
 
 google = st.selectbox(
     'Select source',
@@ -163,7 +163,7 @@ if keyword != "":
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
-    lns1 = ax.plot(time, ftr, '-', label='FTR in ' + country)
+    lns1 = ax.plot(time, ftr, '-', label='TFR in ' + country)
     ax2 = ax.twinx()
     lns2 = ax2.plot(time, key_data, '-r', label=keyword)
 
@@ -211,7 +211,7 @@ if keyword != "":
     ax3.plot(key_data, ftr, 'ro', label = 'original data')
     ax3.plot(polyline, model(polyline),
              label="y=%sx^2 %s*x %s" % (fmt_float(model[2]), fmt_float1(model[1]), fmt_float1(model[0])))
-    ax3.legend(["FTR in " + country, str(keyword)])
+    ax3.legend(["TFR in " + country, str(keyword)])
     ax3.legend(loc='best', fancybox=True, shadow=True)
     ax3.grid()
     ax3.set_xlabel(r"Data")

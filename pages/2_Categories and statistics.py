@@ -46,7 +46,7 @@ plt.rcParams.update({
     "savefig.edgecolor": "black"})
 
 
-st.title("FTR analysis using Google Trends data")
+st.title("TFR analysis using Google Trends data")
 
 
 languages = {
@@ -112,7 +112,7 @@ key_data = df_stats["Data"].values
 fig = plt.figure()
 ax = fig.add_subplot(111)
 
-lns1 = ax.plot(time, ftr, '-', label='FTR in ' + country)
+lns1 = ax.plot(time, ftr, '-', label='TFR in ' + country)
 ax2 = ax.twinx()
 lns2 = ax2.plot(time, key_data, '-r', label=category)
 
